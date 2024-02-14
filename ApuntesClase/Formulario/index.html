@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Formularios</title>
+        <script>
+            //comentario javasrcipt
+            /*comentario*/
+
+            // var nombre  = ' Efra';
+            // var apellidos = 'Robles'
+            // var calificacion= 58;
+
+            // alert('Hola javascript'+nombre+' ' + apellidos)
+            // console.log(" Mensaje oculto de WEB")
+            // var nombre=document.Forma01.correo
+            // var pass=document.Forma01.pass
+            function miAlerta(nombre, pass){
+                alert('Hola'+nombre+' '+pass);
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- Los formularios sirven para organizar y guardar la info's--> 
+
+        <!-- metodo 
+        POST - 
+        GET - 
+        -->
+
+        <!-- se manda las variables al archivo -->
+        <input name="Forma01" method="post" action="recibe.php">
+
+            <input type="text" name="coreo" id="correo" value="@"><br>
+            <input type="text" name="pass" id="pass" placeholder="Escribe tu password: "> <br>
+            <!-- El placehorlder es una marca de agua para la entrada -->
+            <select name="rol" id="rol">
+                <option value="0">Selecciona</option>
+                <option value="1">Gerente</option>
+                <option value="2">Ejecutivo</option>
+            </select>
+            
+            <br>
+            <!-- <input type="submit" value="Enviar"> -->
+            <input onclick="miAlerta(correo.value,pass.value);" type="submit" >
+        <!-- </form>onclick usa el evento en js cuando se oprime-->
+    </body>
+</html>
