@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Validacion de campos</title>
+        <script>
+            function validar(){
+                var correo = document.Forma01.correo.value;
+                var pass = document.Forma01.pass.value;
+                var rol = document.Forma01.rol.value;
+                // alert(+nombre+' '+pass+' '+rol);
+                
+                console.log(correo+' '+pass+' '+rol);
+                if(correo == '' || pass == '' || rol == "0"){
+                    alert("Faltan campos por llenar :(");
+                    // alert(rol);
+                }else{
+                    alert("Campos llenos :)");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Validacion de campos con JS</h1>
+        <!-- se manda las variables al archivo -->
+        <form name="Forma01" method="post" action="recibe.php">
+            <input type="text" name="coreo" id="correo" value="@"><br>
+            <input type="text" name="pass" id="pass" placeholder="Escribe tu password: "> <br>
+            <select name="rol" id="rol">
+                <option value="0">Selecciona</option>
+                <option value="1">Gerente</option>
+                <option value="2">Ejecutivo</option>
+            </select>
+            <br>
+            <input type="submit" onclick="validar(); return false;">
+            </form>
+    </body>
+</html>
