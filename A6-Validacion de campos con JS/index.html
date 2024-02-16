@@ -6,13 +6,10 @@
                 var correo = document.Forma01.correo.value;
                 var pass = document.Forma01.pass.value;
                 var rol = document.Forma01.rol.value;
-                // alert(+nombre+' '+pass+' '+rol);
                 
-                console.log(correo+' '+pass+' '+rol);
-                if(correo == '' || pass == '' || rol == "0"){
+                if(correo == '' || pass == '' || rol == "0"){ //Si esta algun campo vacio
                     alert("Faltan campos por llenar :(");
-                    // alert(rol);
-                }else{
+                }else{  // Si no estan vacios los campos
                     alert("Campos llenos :)");
                 }
             }
@@ -20,18 +17,20 @@
     </head>
 
     <body>
-        <h1>Validacion de campos con JS</h1>
+        <h1 align="center">Validacion de campos con JS</h1>
+        <br>
+        <h2 align="center">Formulario</h2>
         <!-- se manda las variables al archivo -->
-        <form name="Forma01" method="post" action="recibe.php">
-            <input type="text" name="coreo" id="correo" value="@"><br>
-            <input type="text" name="pass" id="pass" placeholder="Escribe tu password: "> <br>
+        <form align="center" name="Forma01" id="Forma01" method="post" action="recibe.php">
+            <input type="text" name="coreo" id="correo" placeholder="Escribe tu correo "><br> <br>
+            <input type="text" name="pass" id="pass" placeholder="Escribe tu password "> <br> <br>
             <select name="rol" id="rol">
                 <option value="0">Selecciona</option>
                 <option value="1">Gerente</option>
                 <option value="2">Ejecutivo</option>
             </select>
-            <br>
-            <input type="submit" onclick="validar(); return false;">
+            <br> <br>
+            <input type="submit" onclick="validar(); return false;" value="Enviar">
             </form>
     </body>
 </html>
