@@ -7,7 +7,7 @@
             var nombre = document.forma01.nombre.value;
             var correo = document.forma01.correo.value;
             var sexo = document.forma01.sexo.value;
-			var boletin = document.forma01.boletin.checked; //Sera un valor BOOL cuando tiene el checked
+			var boletin = document.forma01.boletin.checked; //Sera un valor BOOL cuando tiene el checked, si esta seleccionado sera TRUE
             var comentario = document.forma01.comentario.value;
 
             var carrera = document.forma01.carrera;//Guardamos el objeto HTML, para usar sus metodos despues
@@ -18,20 +18,18 @@
 
 			//Verificacion de datos
 			//Si alguno esta vacio o es el por defecto
-            if (nombre==""||correo=="@udg.mx"||sexo==""||boletin==false||comentario==""||carrera.value=="0"||pass==""||promedio==""||fecha==""){
+            if (nombre==""||correo=="@udg.mx"||correo==""||sexo==""||!boletin||comentario==""||carrera.value=="0"||pass==""||promedio==""||fecha==""){
                 alert("Faltan campos por llenar :(")
             }else{
-				//Reescribe las varibles para mostrar los datos, no el valor
+				//Reescribe la varible para mostrar los datos, no el valor o el objeto HTML
 				carrera = carrera.options[carrera.value].text;
-				
-				console.log(carrera);/////////
                 
 				sexo = sexo === "M"? "Masculino":"Femenino"; //Se ajusta el valor del radio
                 alert(
                     "Nombre: " + nombre + "\n" +
                     "Correo: " + correo + "\n" +
                     "Sexo: " + sexo + "\n" +
-                    "Boletin: " + (boletin === true? "Si recibio" : "No recibio") + "\n" + //Operacion ternaria para escrribir el texto
+                    "Boletin: " + (boletin? "Si recibio" : "No recibio") + "\n" + //Operacion ternaria para escrribir el texto
                     "Comentario: " + comentario + "\n" +
                     "Carrera: " + carrera + "\n" +
                     "Password: " + pass + "\n" +
