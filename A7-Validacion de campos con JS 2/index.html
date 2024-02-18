@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Formulario request</title>
+    <script>
+        function recibe(){
+            var nombre = document.forma01.nombre.value;
+            var correo = document.forma01.correo.value;
+            var sexo = document.forma01.sexo.value;
+
+            var boletin = document.forma01.boletin.checked;
+            var comentario = document.forma01.comentario.value;
+           // var carrera = document.forma01.carrera;
+
+            var carrera = document.forma01.carrera.options[document.forma01.carrera.value].text;//obtiene el texto del options escrito en el html
+
+            var pass = document.forma01.pasw.value;
+            var promedio = document.forma01.promedio.value;
+            var fecha = document.forma01.fecha.value;
+
+            // console.log(carrera);
+            if (nombre==''||correo==''||sexo==''||boletin==false||comentario==''||pass==''||promedio==''||fecha==''){
+                alert("Faltan campos por llenar :(")//Verificacion de datos
+            }else{
+                sexo = sexo == "M"? "Masculino":"Femenino"; //Se ajusta el valor del radio
+                boletin = boletin == true? "Si recibio" : "No recibio";
+                alert(
+                    "nombre: " + nombre + "\n" +
+                    " correo: " + correo + "\n" +
+                    " sexo: " + sexo + "\n" +
+                    " boletin: " + boletin + "\n" +
+                    " comentario: " + comentario + "\n" +
+                    " carrera: " + carrera + "\n" +
+                    " pass: " + pass + "\n" +
+                    " promedio: " + promedio + "\n" +
+                    " fecha: " + fecha + "\n"
+                    )
+            }
+        }
+    </script>
+</head>
+
+<body>
+	<form name="forma01" action="recibe.html" method="POST">
+		<label>
+			Nombre:
+			<input id="campo1" type="text" name="nombre" placeholder="Escribe tu nombre" value="efra" required>
+        </label>
+		<br>
+
+		<label>Correo:</label>
+		<input type="email" name="correo" value="efra@udg.mx">
+		<br>
+
+		<label for="sexo">Genero:</label>
+		<input type="radio" name="sexo" value="F">Femenino
+		<input type="radio" name="sexo" value="M">Masculino
+		<br>
+
+		<input type="checkbox" name="boletin" value="1" checked>
+		<label for="boletin">Recibir Boletín</label>
+		<br>
+
+		<label for="comentario">Comentario:</label><br>
+		<textarea name="comentario" cols="30" rows="5" value="123"></textarea>
+		<br>
+
+		<label for="carrera">Carrera:</label>
+		<select name="carrera">
+			<option value="0" selected>Selecciona</option>
+			<option value="1">Ing. Informática</option>
+			<option value="2">Ing. Computación</option>			
+		</select>
+		<br>
+
+		<label for="pasw">Contraseña:</label>
+		<input type="password" name="pasw" value="123">
+		<br>
+
+		<label for="promedio">Promedio:</label>
+		<input type="number" name="promedio" min="60" max="100" value="60">
+		<br>
+
+		<label for="fecha">Fecha nacimiento:</label>
+		<input type="date" name="fecha">
+		<br>
+
+		<input onClick="recibe(); return false;" type="submit" value="Enviar con input">
+	</form>
+	
+</body>
+
+</html>
