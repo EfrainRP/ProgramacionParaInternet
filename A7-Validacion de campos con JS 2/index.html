@@ -9,6 +9,7 @@
             var sexo = document.forma01.sexo.value;
 			var boletin = document.forma01.boletin.checked; //Sera un valor BOOL cuando tiene el checked
             var comentario = document.forma01.comentario.value;
+
             var carrera = document.forma01.carrera;//Guardamos el objeto HTML, para usar sus metodos despues
 
             var pass = document.forma01.pasw.value;
@@ -26,12 +27,11 @@
 				console.log(carrera);/////////
                 
 				sexo = sexo === "M"? "Masculino":"Femenino"; //Se ajusta el valor del radio
-                boletin = boletin === true? "Si recibio" : "No recibio";
                 alert(
                     "Nombre: " + nombre + "\n" +
                     "Correo: " + correo + "\n" +
                     "Sexo: " + sexo + "\n" +
-                    "Boletin: " + boletin + "\n" +
+                    "Boletin: " + (boletin === true? "Si recibio" : "No recibio") + "\n" + //Operacion ternaria para escrribir el texto
                     "Comentario: " + comentario + "\n" +
                     "Carrera: " + carrera + "\n" +
                     "Password: " + pass + "\n" +
