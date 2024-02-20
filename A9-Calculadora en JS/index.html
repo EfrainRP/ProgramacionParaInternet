@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Calculadora</title>
+        <script>
+            // function validar(){
+            //     var correos = Array('Efrain', 'Miguel', 'Andrea', 'Carlos', 'Marco');
+            //     var passws = Array('efraRob', 'elmigue', 'gaspar123', '123charly', 'mark@');
+                
+            //     var correo = document.Forma01.correo.value;
+            //     var pass = document.Forma01.pass.value;
+            //     if(correo === '' || pass === ''){ //Si esta algun campo vacio
+            //         alert("Faltan campos por llenar :(");
+            //     }else{  // Si no estan vacios los campos
+            //         for(i=0;i<correos.length;i++){
+            //             if (correos[i]===correo && passws[i]===pass){ //Si encuentra los datos en el arreglo
+            //                 alert('Bienvenido '+correos[i]);
+            //                 //break;
+            //             }
+            //             console.log(i)
+            //         }
+            //         console.log("e "+i);
+            //         if(i>=correos.length){
+            //             alert("Datos incorrectos");
+            //         }
+            //     }
+            // }
+        </script>
+    </head>
+
+    <body>
+        <h1 align="center">Calculadora</h1>
+        <br>
+        <h2 align="center">Formulario</h2>
+        <!-- se manda las variables al archivo -->
+        <form align="center" name="Forma01" id="Forma01" method="post" action="recibe.php">
+            <input type="text" name="display" id="display"><br>
+            <button>9</button>
+            <button>8</button>
+            <button>7</button>
+            <button>6</button>
+            <button>5</button>
+            <button>4</button>
+            <button>3</button>
+            <button>2</button>
+            <button>1</button>
+            <button>0</button>
+            <input type="submit" onclick="validar();return false;" value="Enviar">
+            </form>
+    </body>
+</html>
