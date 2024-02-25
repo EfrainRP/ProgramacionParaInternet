@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>A12 - Tablero de ajedrez</title>
+        <style>
+            h1{
+                text-align: center;
+            }
+            .bgBlack{
+                background: black;
+            }
+            #tableA{
+                width:800px;
+                height:800px;
+                border: 1px solid black;
+                display: grid;
+                /* Con el grid, hacemos que el contenedor sea como una matriz para el posionamiento,
+                usando el REPEAT le decimos que dividira por 8 filas y columnas de 1 fraccion equitativamente del contenedor */
+                grid-template-columns: repeat(8,1fr);
+                grid-template-rows: repeat(8,1fr);
+                background-color: white;
+
+                /* el valor AUTO es para repartir por igual el espacio para el margen izq. y derecho de la pagina */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <h1>Tablero de Ajedrez</h1>
+
+        <div id="tableA">
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+        
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+        
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+        
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+        
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+        
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+        
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+        
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+                <div class="bgBlack"></div>
+                <div></div>
+        </div>
+
+    </body>
+</html>
