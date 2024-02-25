@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title> A10 -  Eliminar filas con JS</title>
+        <!-- Conectamos los archivos JS para agregar funcionalidad al HTML -->
+        <script src="./JS/jquery-3.3.1.min.js"></script>
+        <script>
+            function eliminar(id){
+                if(confirm("¿Seguro de que quieres eliminar esta fila?")){//Segun lo que salga en la ventana de confirmacion, ejecutara el archivo
+                    $('#row'+id).hide();
+                    console.log(id);
+                }
+            }
+        </script>
+        <link rel="stylesheet" href="style.css"> <!-- Se conecta el archivo CSS para los estilos-->
+    </head>
+
+    <body>
+        <h1> Peliculas</h1>
+        <p>Peliculas recomendadas, podras ver su trailer haciendo clic en las imágenes o en su titulo: </p>
+
+        <table >
+
+            <tr> <!--Encabezado de la tabla-->
+                <td colspan="3">Peliculas</td>
+            </tr>
+
+            <tr id="row1">
+                <td><!-- Imagen 1 -->
+                    <a href="https://www.youtube.com/watch?v=823iAZOEKt8" target=”_blank”><img src="./img/Avengers.jpg" > </a>
+                </td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=823iAZOEKt8" target=”_blank”>Avengers: Infinity War</a>
+                </td>
+                <td>
+                    <input type="button" onclick="eliminar(1);" value="Eliminar">
+                </td>
+            </tr>
+
+            <tr id="row2">
+                <td><!-- Imagen 2 -->
+                    <a href="https://www.youtube.com/watch?v=32RAq6JzY-w" target="_blank"><img src="./img/FastFurious.jpg" > </a>
+                </td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=32RAq6JzY-w" target="_blank">Fast and Furious X</a> 
+                </td>
+                <td>
+                    <input type="button" onclick="eliminar(2);" value="Eliminar">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td><!-- Imagen 3 -->
+                    <a href="https://www.youtube.com/watch?v=RFinNxS5KN4" target="_blank"><img src="./img/jurassicWorld.jpg"> </a> 
+                </td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=RFinNxS5KN4" target="_blank">Jurassic World</a> 
+                </td>
+                <td>
+                    <input type="button" onclick="eliminar(3);" value="Eliminar">
+                </td>
+            </tr>
+
+            <tr id="row4">
+                <td><!-- Imagen 4 -->
+                    <a href="https://www.youtube.com/watch?v=5guMumPFBag" target="_blank"><img src="./img/PacifiRim.jpg"> </a> 
+                </td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=5guMumPFBag" target="_blank">Pacific Rim</a> 
+                </td>
+                <td>
+                    <input type="button" onclick="eliminar(4);" value="Eliminar">
+                </td>
+            </tr>
+
+            <tr id="row5">
+                <td><!-- Imagen 5 -->
+                    <a href="https://www.youtube.com/watch?v=cqGjhVJWtEg" target="_blank"><img src="./img/Spiderverse.jpg"> </a>
+                </td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=cqGjhVJWtEg" target="_blank">Spiderman: Across the Spider-Verse</a> 
+                </td>
+                <td>
+                    <input type="button" onclick="eliminar(5);" value="Eliminar">
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
