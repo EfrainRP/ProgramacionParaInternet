@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>A11 - Tablas HTML 02</title>
+        <style>
+            #table2{
+                border: 1px solid black;
+                width:960px;
+                height:800px;
+                display: grid;
+                grid-template-rows: 50px auto 50px;
+                grid-template-columns: 50% auto;
+                margin: auto;
+                padding: 2px;
+                gap: 2px;
+            }
+             #table2 div{ /*Accedera a los div's hijos de la clase "table2" */
+                border: 1px solid black;
+            }
+            .cell1, .cell4{
+                grid-column: span 2; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="table2">
+            <div class="cell1"></div>
+            <div class="cell2"></div>
+            <div class="cell3"></div>
+            <div class="cell4"></div>
+        </div>
+    </body>
+</html>

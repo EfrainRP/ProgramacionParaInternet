@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>A11 - Tablas HTML 04</title>
+        <style>
+            #table4{
+                border: 1px solid black;
+                width:960px;
+                height:800px;
+                display: grid;
+                /* Usando grid, podremos acomodarlos como tabla */
+                grid-template-rows: repeat(2,50%); 
+                grid-template-columns: repeat(2,50%); 
+                margin:auto;
+                padding: 0.25%;
+                gap:0.25%;
+            }
+            .sub_table{ 
+                margin:18% auto; /*margen en vertical y horizontal*/
+            }
+            .space, .sub_table, .sub_table div{ 
+                border: 1px solid black;
+                padding: .725%;
+                gap:0.625%;
+            }
+            #t1{
+                width:50%;
+                height:50%;
+                display: grid;
+                grid-template-rows: 6.275% auto; 
+                grid-template-columns: 10.41% auto; 
+            }
+            .cell1_top{
+                grid-column: span 2; 
+            }
+            #t2{
+                width:50%;
+                height:50%;
+                display: grid;
+                grid-template-rows: 6.275% auto 6.275%; 
+                grid-template-columns: 50% auto; 
+            }
+            .cell_bottom{
+                grid-column: span 2;
+            }
+            #t3{
+                width:50%;
+                height:50%;
+                display: grid;
+                grid-template-rows: 6.275% auto auto 6.275%; 
+                grid-template-columns: 10.41% auto; 
+            }
+            #t3 .cell2{
+                grid-row: span 2;
+            }
+            #t4{
+                width:50%;
+                height:50%;
+                display: grid;
+                grid-template-rows: repeat(2,50%); 
+                grid-template-columns: repeat(2,50%); 
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="table4">
+            <div class="space">
+                <div class="sub_table" id="t1">
+                    <div class="cell1_top"></div>
+                    <div class="cell2"></div>
+                    <div class="cell3"></div>
+                </div>
+                
+            </div>
+            <div class="space">
+                <div class="sub_table" id="t2">
+                    <div class="cell1_top"></div>
+                    <div class="cell2" ></div>
+                    <div class="cell3"></div>
+                    <div class="cell_bottom"></div>
+                </div>
+                
+            </div>
+            <div class="space">
+                <div class="sub_table" id="t3">
+                    <div class="cell1_top"></div>
+                    <div class="cell2"></div>
+                    <div class="cell3"></div>
+                    <div class="cell4"></div>
+                    <div class="cell_bottom"></div>
+                </div>
+                
+            </div>
+            <div class="space">
+                <div class="sub_table" id="t4">
+                    <div class="cell1"></div>
+                    <div class="cell2"></div>
+                    <div class="cell3"></div>
+                    <div class="cell4"></div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>

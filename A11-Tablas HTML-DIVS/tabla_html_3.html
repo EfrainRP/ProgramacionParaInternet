@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>A11 - Tablas HTML 03</title>
+        <style>
+            #table3{
+                border: 1px solid black;
+                width:960px;
+                height:800px;
+                display: grid;
+                /* el valor AUTO es para repartir por igual el espacio */
+                grid-template-rows: 50px auto auto 50px;
+                grid-template-columns: 100px auto;
+                margin: auto;
+                padding: 2px;
+                gap: 2px;
+            }
+            #table3 div{
+                border: 1px solid black;
+            }
+            .cell1, .cell5{
+                grid-column: span 2; 
+            }
+            .cell2{
+                grid-row: span 2;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="table3">
+            <div class="cell1"></div>
+            <div class="cell2"></div>
+            <div class="cell3"></div>
+            <div class="cell4"></div>
+            <div class="cell5"></div>
+        </div>
+    </body>
+</html>

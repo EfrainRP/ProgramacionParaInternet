@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>A11 - Tablas HTML 01</title>
+        <style>
+            #table1{
+                border: 1px solid black;
+                width:960px;
+                height:800px;
+                display: grid;
+                /* Usando grid, podremos acomodarlos como tabla */
+                grid-template-rows: 50px auto; /* la primera fila sera de 50px y la otra fila sera con lo que sobre de la anchura de la tabla */
+                grid-template-columns: 100px auto; /* la primera columna sera de 100px y la otra columna sera con lo que sobre de la altura de la tabla */
+                margin: auto;
+                padding: 2px;
+                gap: 2px;
+            }
+            #table1 div{ /*Accedera a los div's hijos de la clase "table1" */
+                border: 1px solid black;
+            }
+            .cell1{
+                /* Se configura el grid para las columnas de nuestro contenedor cell1, de un span de 2
+                se puede usar tambien "1 / 3", de columna 1 hasta el limite de 3*/
+                grid-column: span 2; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="table1" >
+            <div class="cell1"></div>
+            <div class="cell2"></div>
+            <div class="cell3"></div>
+        </div>
+
+    </body>
+</html>
