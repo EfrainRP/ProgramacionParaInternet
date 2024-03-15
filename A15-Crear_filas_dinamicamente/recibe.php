@@ -1,5 +1,6 @@
 <?php
     $filas = $_POST['filas'];
+    $selectNum = 5000;
 ?>
 <html>
     <head>
@@ -28,11 +29,11 @@
         <form name="forma01" action="recibe.php" method="POST">
             <label for="filas">Carrera:</label>
             <select name="filas">
-                for(i=0;i<filas)
-                <option value="0" selected>Selecciona</option>
-                <option value="1">Ing. Informática</option>
-                <option value="2">Ing. Computación</option>			
                 <?php
+                echo "<option value="0" selected>Selecciona</option>"
+                for($i=1;$i<filas;$i++){
+                echo "<option value="$i" selected>Selecciona</option>"
+                }
 
             echo "<table class=\"tabla\">";
             echo "<td>";
