@@ -6,7 +6,7 @@
     <head>
         <title>A15. Crear filas dinamicamente</title>
         <style>
-            .ultimo{
+           .ultimo{
                 font-size:12px;
                 color:#CCC;
             }
@@ -27,26 +27,26 @@
         <h1>Crear filas dinamicamente</h1>   
         <br><br>
         <form name="forma01" action="recibe.php" method="POST">
-            <label for="filas">Carrera:</label>
+            <label for="filas">Filas:</label>
             <select name="filas">
                 <?php
-                echo "<option value="0" selected>Selecciona</option>"
-                for($i=1;$i<filas;$i++){
-                echo "<option value="$i" selected>Selecciona</option>"
+                    echo "<option value=\"0\" selected>Selecciona</option>";
+                    for($i=1;$i<$selectNum;$i++){
+                        echo "<option value=\"$i\">$i</option>";
+                    }
+                ?>
+            <input type="submit" value="Enviar con input">
+        </form>
+            <?php
+            echo "Filas: $filas <br><br>";
+                if($filas>0){
+                    echo "<table class=\"tabla\">";
+                    for($i=1;$i<=$filas;$i++){
+                        echo "<tr><td>$i</td></tr>";
+                    }
+                    echo"</table>";
                 }
-
-            echo "<table class=\"tabla\">";
-            echo "<td>";
-            for($i=0;$i<$filas;$i++){
-                $letra = $letras[$i];
-                $col = $i+1;
-                $txt = $letra.$col;
-                echo "<tr>$txt</tr>";
-            }
-            echo "  </td>";
-            echo"<table>";
             ?>
             </select>
-        </form>
     </body>
 </html>
