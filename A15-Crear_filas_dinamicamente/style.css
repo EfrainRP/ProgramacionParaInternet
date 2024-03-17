@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+}
+body{
+    background-color: rgba(158, 155, 155, 0.695);
+}
+.ultimo{
+    font-size:12px;
+    color:#CCC;
+}
+.tabla{
+    margin: auto;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    background: rgba(237, 118, 43, 0.746);
+} 
+.tabla td{
+    width: 40px;
+    height:40px;
+    border:1px solid rgb(0, 0, 0);
+    text-align:center;
+}
