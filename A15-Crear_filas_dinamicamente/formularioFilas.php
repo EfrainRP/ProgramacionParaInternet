@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>A15. Crear filas dinamicamente</title>
-        <link rel="stylesheet" href=".\styleForm.css"> <!-- Se conecta el archivo CSS para los estilos-->
+        <link href="./style.css" rel="stylesheet" type="text/css">
         <!-- <script src="./JS/jquery-3.3.1.min.js"></script> -->
         <script>
             function getFila(){
@@ -9,12 +9,12 @@
                 console.log(filas);
                 if(filas == 0){
                     alert("Valor invalido...");
-                    console.log(filas);
                     return false;
                 }
                 else{
-                    alert(filas);
-                    return true;
+                    console.log(filas);
+                    // alert(filas);
+                    document.form01.submit();
                 }
             }
         </script>
@@ -23,7 +23,7 @@
         <h1>Crear filas dinamicamente</h1>
         <br> 
         <form name="forma01" action="./recibe.php" method="POST">
-            <label for="filas">Filas:</label>
+            <label for="Lfilas">Filas:</label>
             <select id="filas" name="filas">
                 <option value="0" selected>Selecciona</option>;
                 <?php
@@ -33,7 +33,7 @@
                     }
                 ?>
             </select>
-            <input type="submit" onClick="getFila();" value="Enviar con input">
+            <input type="submit" onClick="getFila(); return false;" value="Enviar con input">
         </form>
     </body>
 </html>

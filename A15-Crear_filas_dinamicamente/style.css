@@ -20,3 +20,17 @@ body{
     border:1px solid rgb(0, 0, 0);
     text-align:center;
 }
+a:link, a:visited {
+    background-color: #3ca205;
+    color: rgb(0, 0, 0);
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius:35px;
+}  
+a:hover, a:active {
+    background-color: rgb(104, 231, 13);
+}

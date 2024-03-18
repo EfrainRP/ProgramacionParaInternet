@@ -1,9 +1,9 @@
-/* *{
+*{
     text-align: center;
 }
 body{
     background-color: rgba(239, 6, 6, 0.695);
-    rgba(158, 155, 155, 0.695);
+    /* rgba(158, 155, 155, 0.695); */
 }
 .ultimo{
     font-size:12px;
@@ -20,4 +20,4 @@ body{
     height:40px;
     border:1px solid rgb(0, 0, 0);
     text-align:center;
-} */
+} 
