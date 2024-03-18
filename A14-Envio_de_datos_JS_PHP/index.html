@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Formulario request</title>
+        <title>Envio de datos JS / PHP</title>
+        <link href="./style.css" rel="stylesheet">
         <script>
             function recibe(){
                 var nombre = document.forma01.nombre.value;
@@ -15,9 +16,9 @@
                 var promedio = document.forma01.promedio.value;
                 var fecha = document.forma01.fecha.value;
 
-                if(correo == '' || pass == '' || rol == "0"){ //Si esta algun campo vacio
-                    alert("Faltan campos por llenar :(");
-                }else{  // Si no estan vacios los campos
+                if (nombre==""||correo=="@udg.mx"||correo==""||sexo==""||!boletin||comentario==""||carrera.value=="0"||pass==""||promedio==""||fecha==""){
+                    alert("Faltan campos por llenar :(")
+                }else{
                     // alert("Campos llenos :)");
                     document.forma01.method = 'post';
                     document.forma01.action = 'recibe.php';
@@ -27,6 +28,7 @@
         </script>
     </head>
     <body>
+        <h1>Envio de datos JS / PHP</h1>
         <form name="forma01" action="recibe.php" method="POST">
             <label>
                 Nombre:
