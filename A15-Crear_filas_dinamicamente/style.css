@@ -20,7 +20,7 @@ body{
     border:1px solid rgb(0, 0, 0);
     text-align:center;
 }
-a:link, a:visited {
+a:link, a:visited {/*Estilo sobre el link visitado o no visitados por el usuario*/
     background-color: #3ca205;
     color: rgb(0, 0, 0);
     padding: 14px 25px;
@@ -31,6 +31,6 @@ a:link, a:visited {
     border-style: solid;
     border-radius:35px;
 }  
-a:hover, a:active {
+a:hover, a:active { /*Estilo cuando se selecciona y se pasa el mouse por encima*/
     background-color: rgb(104, 231, 13);
 }
