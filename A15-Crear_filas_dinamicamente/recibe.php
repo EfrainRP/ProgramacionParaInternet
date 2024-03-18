@@ -1,8 +1,6 @@
 <?php
-    include "./formularioFilas.php";
-
         $filas = $_POST['filas'];
-        // echo "Filas: ".$filas." <br><br>";
+        echo "Filas: ".$filas." <br><br>";
     if($filas>0){
         echo "<table class=\"tabla\">";
         for($i=1;$i<=$filas;$i++){

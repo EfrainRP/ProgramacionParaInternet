@@ -1,22 +1,23 @@
 <html>
     <head>
         <title>A15. Crear filas dinamicamente</title>
-        <link rel="stylesheet" href="style.css"> <!-- Se conecta el archivo CSS para los estilos-->
-        <script src="./JS/jquery-3.3.1.min.js"></script>
-        <?php
-            function getRow(){
-                $filas = "filas";
-                echo $filas;
-                if($filas == 0){
+        <link rel="stylesheet" href=".\styleForm.css"> <!-- Se conecta el archivo CSS para los estilos-->
+        <!-- <script src="./JS/jquery-3.3.1.min.js"></script> -->
+        <script>
+            function getFila(){
+                var filas = document.forma01.filas.value;
+                console.log(filas);
+                if(filas == 0){
                     alert("Valor invalido...");
+                    console.log(filas);
                     return false;
                 }
                 else{
-                    console.log(filas);
+                    alert(filas);
                     return true;
                 }
             }
-        ?>
+        </script>
     </head>
     <body>
         <h1>Crear filas dinamicamente</h1>
@@ -32,7 +33,7 @@
                     }
                 ?>
             </select>
-            <input type="submit" onclick="getRow();" value="Enviar con input">
+            <input type="submit" onClick="getFila();" value="Enviar con input">
         </form>
     </body>
 </html>
