@@ -25,7 +25,7 @@
             }
             
             </style>
-        <script src="./JS/jquery-3.3.1.min.js"></script>
+        <script src="../../Libraries/jquery-3.3.1.min.js"></script>
         <script>
             function eliminaAlumnos(){
                 $('.alumno').hide();
@@ -34,12 +34,12 @@
             }
             function eliminaMaestro(){ //Elimina todos los maestros por el '.maestro' 
                 $('.maestro').hide();
-                $('#mensaje').html('<img src="./JS/loader.gif">');
+                $('#mensaje').html('<img src="./loader.gif">');
                 setTimeout("$('#mensaje').html('');",5000);
             }
             function eliminaMaestro2(id){//Elimina solo un maestro'
                 $('#maestro'+id).hide();
-                $('#mensaje').html('<img src="./JS/loader.gif">');
+                $('#mensaje').html('<img src="./loader.gif">');
                 setTimeout("$('#mensaje').html('');",5000);
             }
         </script>
