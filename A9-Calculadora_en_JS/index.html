@@ -1,26 +1,42 @@
 <html>
     <head>
-        <title>Calculadora</title>
-        
+        <title>A9 - Calculadora</title>
+        <link rel="stylesheet" href="./style.css">
     </head>
-
+    
     <body>
         <h1 >Calculadora</h1>
         <br>
-        <form  name="Forma01" id="Forma01" method="post" action="recibe.php">
-            <input type="text" name="display" id="display"><br>
-            <input type="button" value="9">
-            <input type="button" value="8">
-            <input type="button" value="7">
-            <input type="button" value="6">
-            <input type="button" value="5">
-            <input type="button" value="4">
-            <input type="button" value="3">
-            <input type="button" value="2">
-            <input type="button" value="1">
-            <input type="button" value="0">
+        <!-- action="recibe.php" -->
+        <form  name="Form01" id="Form01" method="post" >
+            <div class="calculator">
+            <input type="display" name="display" id="display" disabled>
+            <input type="button" class="operation" id="clear" value="AC" onclick="clearDisplay();">
+                <div class="buttons">
+                    <input type="button" class="number" value="7" onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="8" onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="9" onclick="numberClicked(this.value);">
+                    <input type="button" class="operation" id="/" value="/" onclick="operation(this.value);">
+
+                    <input type="button" class="number" value="4" onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="5" onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="6" onclick="numberClicked(this.value);">
+                    <input type="button" class="operation" id="*" value="*" onclick="operation(this.value);">                
+
+                    <input type="button" class="number" value="1" onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="2" onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="3" onclick="numberClicked(this.value);">
+                    <input type="button" class="operation" id="-" value="-" onclick="operation(this.value);">
+
+                    <input type="button" id="." value="." onclick="numberClicked(this.value);">
+                    <input type="button" class="number" value="0" onclick="numberClicked(this.value);">
+                    <input type="submit" class="operation" id="=" value="=" onclick="calculate(); return false;">
+                    <input type="button" class="operation" id="+" value="+" onclick="operation(this.value);">
+                </div>
+                </div>
+            </div>
+            <script src="../Libraries/jquery-3.3.1.min.js"></script>
             <script src="./function.js"></script>
-            <input type="submit"  value="=">
         </form>
     </body>
 </html>
