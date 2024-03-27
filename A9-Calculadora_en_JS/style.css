@@ -1,15 +1,30 @@
+body{
+    background-color:#07c5ff;
+}
+h1{
+    text-align: center;
+}
 .calculator {
     width: 300px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 3px solid black;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.377);
+    background-color: #12e2b59e ;
+}
+.clearDisplay{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
 }
 #clear{
-    margin-left: 77.5%;
+    margin: auto; /* Margen a los 4 lados */
 }
-.calculator>.buttons{
+#clearAll{
+    margin: auto; /* Margen a los 4 lados */
+}
+.calculator .buttons{
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(3,auto);
@@ -27,4 +42,67 @@
     margin: 5px;
     font-size: 18px;
     cursor: pointer;
+}
+
+.calculator #display{
+    background-color: #8cecce;
+}
+.calculator #equal{
+    background-color: #a257ab;
+} 
+.calculator #equal:hover{
+    background-color: #9c08ac;
+} 
+.calculator #equal:active{
+    background-color: #e600fff7;
+}
+
+.calculator #clearAll{
+    background-color: #5fca5d;
+} 
+.calculator #clearAll:hover{
+    background-color: #156a14af;
+} 
+.calculator #clearAll:active{
+    background-color: #5fe80a;
+}
+
+.calculator #clear{
+    background-color: #fa4c4ce4;
+} 
+.calculator #clear:hover{
+    background-color: #981919e4;
+} 
+.calculator #clear:active{
+    background-color: #f20f0fe4;
+}
+
+.calculator #point{
+    background-color: #ecf47e;
+} 
+.calculator #point:hover{
+    background-color: #828a11af;
+} 
+.calculator #point:active{
+    background-color: #e5f411d1;
+}
+
+.calculator .number{
+    background-color: #2b5cc7;
+} 
+.calculator .number:hover{
+    background-color: #0a41b7;
+} 
+.calculator .number:active{
+    background-color: #4d80ef;
+}
+
+.calculator .operation{
+    background-color: #de1e48;
+}
+.calculator .operation:hover{
+    background-color: #980727;
+}
+.calculator .operation:active{
+    background-color: #ed234f;
 }
