@@ -6,32 +6,31 @@
     
     <body>
         <h1>Calculadora Básica</h1>
-        <!-- action="recibe.php" -->
+        
         <form  name="Form01" id="Form01" method="post" action="recibe.php">
             <div class="calculator">
-                <input type="display" name="display" id="display" disabled>
-                
-                    <div class="clearDisplay">
-                        <input type="button" class="operation" id="clearAll" value="AC" onclick="clearDisplay(this.value);">
-                        <input type="button" class="operation" id="clear" value="C" onclick="clearDisplay(this.value);">
-                    </div>
+                <input type="text" name="display" id="display" disabled>
 
-                    <div class="buttons">
+                <div class="clearDisplay">
+                    <input type="button" class="operationExtra" id="clearAll" value="AC" onclick="clearDisplay(this.value);">
+                    <input type="button" class="operationExtra" id="clear" value="C" onclick="clearDisplay(this.value);">
+                </div>
 
+                <div class="buttons">
                     <input type="button" class="number" value="7" onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="8" onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="9" onclick="numberClicked(this.value);">
-                    <input type="button" class="operation" id="/" value="/" onclick="operation(this.value);">
+                    <input type="button" class="operation" id="div" value="/" onclick="operation(this.value);">
 
                     <input type="button" class="number" value="4" onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="5" onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="6" onclick="numberClicked(this.value);">
-                    <input type="button" class="operation" id="*" value="*" onclick="operation(this.value);">                
+                    <input type="button" class="operation" id="multi" value="*" onclick="operation(this.value);">                
 
                     <input type="button" class="number" value="1" onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="2" onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="3" onclick="numberClicked(this.value);">
-                    <input type="button" class="operation" id="-" value="-" onclick="operation(this.value);">
+                    <input type="button" class="operation" id="rest" value="-" onclick="operation(this.value);">
 
                     <input type="button" id="point" value="." onclick="numberClicked(this.value);">
                     <input type="button" class="number" value="0" onclick="numberClicked(this.value);">
@@ -40,6 +39,7 @@
                 </div>
                 </div>
             </div>
+            <!-- Se incluyen las libreria JS para su funcionalidad -->
             <script src="../Libraries/jquery-3.3.1.min.js"></script>
             <script src="./function.js"></script>
         </form>

@@ -11,47 +11,44 @@
 //     });
 // });
 
+// Memoria de la calculadora
 let op1 = '';
 let op2= '';
 let result = '';
 let operator = '';
 
-let display = $('#display');
+let display = $('#display'); //Variable para usar jQuery y obtener su valor
 
-function numberClicked(number) {
-    if(result == display.val()){
+function numberClicked(number) {//Funcion para escribir en el display
+    if(result == display.val()){ //Vacia el valor para una nueva operacion
         display.val('');
+    }else if((number == '.') && (display.val().includes('.'))){ //Evita poner varios puntos en el numero
+        return;
     }
-        display.val(display.val() + number);
-        // console.log("op1: "+ op1);
-        // console.log("op2: "+ op2);
-        // console.log("op: "+ operator);
-        // console.log("r: "+ result);
-        // console.log("display: "+ display.val());
-
+    
+    display.val(display.val() + number); //Se concatena los numeros
 }
 
-function clearDisplay(text) {
-    if(text=='AC'){
+function clearDisplay(text) { //Funcion para limpiar la calculadora
+    if(text=='AC'){//Limpia toda la memoria y display
         display.val('');
         op1 = '';
         op2= '';
         result = '';
         operator = '';
-    }else{
+    }else{ //Limpia el display
         display.val('');
     }
 }
 
-function operation(op) {
+function operation(op) { //Funcion para seguir con el siguiente numero si se presiono el operador
     op1 = display.val();
     operator = op;
     display.val('');
 }
 
-function calculate() {
+function calculate() { //Realiza la operacion segun el operador almacenado
     op2 = display.val();
-    
     switch(operator) {
         case '+':
             result = parseFloat(op1) + parseFloat(op2);
@@ -64,22 +61,21 @@ function calculate() {
             result = parseFloat(op1) * parseFloat(op2);
             break;
         case '/':
-            if (op2 == '0'){
+            if (op2 == '0'){//Si se divide entre 0, se evita el error
                 result = 'Error';
             }else{
                 result = parseFloat(op1) / parseFloat(op2);
             }
             break;
-        default:
+        default: //Si hubo algun error, se mandara el mensaje de Error
             result = "Error"
             break;
     }
-    operator = ''; //Limpiamos el operador para futuras operaciones
-    display.val(result.toString());
+    display.val(result.toString()); //Pasamos el resultado al display
+
     console.log("op1: "+ op1);
     console.log("op2: "+ op2);
-    // console.log("op: "+ operator);
+    console.log("op: "+ operator);
     console.log("r: "+ result);
     // console.log("display: "+ display.val());
-
 }

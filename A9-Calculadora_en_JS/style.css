@@ -9,14 +9,14 @@ h1{
     margin: 50px auto;
     padding: 20px;
     border: 3px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.377);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
     background-color: #12e2b59e ;
+    border-radius: 20px;/*Redondea el ojeto*/
 }
 .clearDisplay{
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto;
+    display: grid; /*Configura el espacio por filas y columnas*/
+    grid-template-rows: auto; /*1 fila*/
+    grid-template-columns: auto auto; /*2 columnas*/
 }
 #clear{
     margin: auto; /* Margen a los 4 lados */
@@ -25,25 +25,29 @@ h1{
     margin: auto; /* Margen a los 4 lados */
 }
 .calculator .buttons{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(3,auto);
+    display: grid;/*Configura el espacio por filas y columnas*/
+    grid-template-columns: repeat(4, auto); /*4 columnas*/
+    grid-template-rows: repeat(3,auto);/*3 filas*/
 }
-.calculator input[type="display"] {
+.calculator #display { /*Configura el display de la calculadora*/
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     font-size: 20px;
     text-align: right;
+    border-radius: 25px;
 }
-.calculator input[type="button"], input[type="submit"]{
+.calculator input[type="button"], input[type="submit"], .operationExtra{
     width: 66px;
     height: 50px;
     margin: 5px;
     font-size: 18px;
     cursor: pointer;
+    border-radius: 10px;
 }
-
+/*CSS de colores del display y de los botones, segun sus modos
+hover - pasas por encima del objeto
+active - le das click*/
 .calculator #display{
     background-color: #8cecce;
 }
