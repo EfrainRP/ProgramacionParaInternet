@@ -1,33 +1,70 @@
-h1{
-    text-align: center;
-}
-
-/* Objketos grandes, div's y etc */
+/* Objetos grandes, div's y etc */
 body{
-    background-color: #7cc4ede2;
+    background: linear-gradient(-145deg,#35a5e6e2,#74d185f9); /*Ajusta el degradado de los colores*/
 }
-.table div{
+.table div, .info, a{
     padding: 2px;
     margin: 2px 3px;
     text-align: center;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #000000;
     border-radius: 8px;/*Redondea el ojeto*/
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+
 }
 .table{
     display: grid;
-    border: 1px solid rgb(0, 0, 0);
+    border: 3px solid #000000;
     grid-template-columns: repeat(8, auto);
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
-
-    border-radius: 5px;/*Redondea el ojeto*/
-    
+    border-radius: 5px;/*Redondea el ojeto*/ 
+    /* background-color: #1f9de5e2; */
+    padding: 5px
 }
-#opciones{
+.header#opciones{
     grid-column: span 3;
 }
 .header{
     background-color: #ff5e00e3;
 }
-/* .table, #header, #header div, .info{
-    border: 1px solid rgb(0, 0, 0);
-} */
+.opciones, #crearRegistro{
+    border: 3px outset darkslategray;
+}
+
+h1{
+    text-align: center;
+}
+.info{
+    background-color: gainsboro/*rgba(240, 236, 236, 0.974)*/;
+}
+#crearRegistro{
+    background-color: #f2e606f4;
+    color:#000000;
+    padding:5px;
+}
+#crearRegistro:hover{
+    background-color: #00ff1e;
+}
+#detalles{
+    background-color: #0000ff;
+    color: white;  
+}
+#detalles:hover{
+    background-color: #1f1fd892;
+}
+#editar{
+    background-color: #05bb05;
+    color: white; 
+}
+#editar:hover{
+    background-color: #3b8a3baa;
+}
+#eliminar{
+    background-color: #ff0000;
+    color: white; 
+}
+#eliminar:hover{
+    background-color: #d027279a;
+}
+#crearRegistro:active, #detalles:active, #editar:active,#eliminar:active{
+    background-color: #ff8800;
+}
