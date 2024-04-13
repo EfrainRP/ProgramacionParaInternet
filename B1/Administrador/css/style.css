@@ -1,26 +1,31 @@
 /* Objetos grandes, div's y etc */
 body{
     background: linear-gradient(-145deg,#35a5e6e2,#74d185f9); /*Ajusta el degradado de los colores*/
+    font-size: 14px;
+    width: auto;
 }
 .header, .info, a{
-    padding: 2px;
-    margin: 2px 3px;
-    text-align: center;
+    padding: 0.65%;
+    margin: 0.09em 0.5%;
+    display: flex; /*Contenedor flexible*/
+    justify-content: space-around; /*Se distribuye equitativamente el espacio del contenido*/
+    align-items: center; /*Se distribuye verticalmente en el centro*/
     border: 1px solid #000000;
-    border-radius: 8px;/*Redondea el ojeto*/
+    border-radius: 0.45em;/*Redondea el ojeto*/
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
-
+    width: auto;
+    font-size: 1.2em; /*se multiplica el valor padre de letra por 1.2em*/
 }
 .table{
     display: grid;
     border: 3px solid #000000;
     grid-template-columns: repeat(8, auto);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
-    border-radius: 5px;/*Redondea el ojeto*/ 
+    box-shadow: 0 0 60px #00000061; /*Le da una sobra al objeto*/
+    border-radius: 0.8em;/*Redondea el ojeto*/ 
     /* background-color: #1f9de5e2; */
-    padding: 5px;
-    font-size: 1em;
+    width: 99.7%;
 }
+
 .header#opciones{
     grid-column: span 3;
 }
@@ -43,31 +48,37 @@ h1{
     background-color: #f2e606f4;
     color:#000000;
     padding:5px;
+    width: 10em;
 }
-#crearRegistro:hover{
+#crearRegistro:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: #00ff1e;
 }
 #detalles{
     background-color: #0000ff;
     color: white;  
+    padding: 0%;
+    font-stretch: normal;
+
 }
-#detalles:hover{
+#detalles:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: #1f1fd892;
 }
 #editar{
     background-color: #05bb05;
     color: white; 
+
 }
-#editar:hover{
+#editar:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: #3b8a3baa;
 }
 #eliminar{
     background-color: #ff0000;
     color: white; 
 }
-#eliminar:hover{
+#eliminar:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: #d027279a;
 }
+/*Se aplica atributo cuando se da click al elemento*/
 #crearRegistro:active, #detalles:active, #editar:active,#eliminar:active{
     background-color: #ff8800;
 }
