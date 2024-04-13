@@ -2,7 +2,7 @@
 body{
     background: linear-gradient(-145deg,#35a5e6e2,#74d185f9); /*Ajusta el degradado de los colores*/
 }
-.table div, .info, a{
+.header, .info, a{
     padding: 2px;
     margin: 2px 3px;
     text-align: center;
@@ -18,14 +18,17 @@ body{
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
     border-radius: 5px;/*Redondea el ojeto*/ 
     /* background-color: #1f9de5e2; */
-    padding: 5px
+    padding: 5px;
+    font-size: 1em;
 }
 .header#opciones{
     grid-column: span 3;
 }
 .header{
     background-color: #ff5e00e3;
+    border: 3px solid #000000;
 }
+
 .opciones, #crearRegistro{
     border: 3px outset darkslategray;
 }
