@@ -1,0 +1,127 @@
+/* Objetos grandes, div's y etc */
+body{
+    background: linear-gradient(-145deg,#35a5e6e2,#74d185f9); /*Ajusta el degradado de los colores*/
+    font-size: 14px;
+    width: auto;
+}
+.header, .info, a{
+    padding: 0.65%;
+    margin: 0.09em 0.5%;
+    display: flex; /*Contenedor flexible*/
+    justify-content: space-around; /*Se distribuye equitativamente el espacio del contenido*/
+    align-items: center; /*Se distribuye verticalmente en el centro*/
+    border: 1px solid #000000;
+    border-radius: 0.45em;/*Redondea el ojeto*/
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    width: auto;
+    font-size: 1.2em; /*se multiplica el valor padre de letra por 1.2em*/
+}
+.table{
+    display: grid;
+    border: 3px solid #000000;
+    grid-template-columns: repeat(8, auto);
+    box-shadow: 0 0 60px #00000061; /*Le da una sobra al objeto*/
+    border-radius: 0.8em;/*Redondea el ojeto*/ 
+    /* background-color: #1f9de5e2; */
+    width: 99.7%;
+}
+
+.header#opciones{
+    grid-column: span 3;
+}
+.header{
+    background-color: #ff5e00e3;
+    border: 3px solid #000000;
+}
+
+.opciones, #crearRegistro{
+    border: 3px outset darkslategray;
+}
+/* Styl Forms */
+/* form div{
+    display:flexbox;
+    border:1px solid black;
+} */
+form{
+    margin:auto;
+    padding: 1em;
+    text-align: center;
+    width:35%;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
+    background-color: white ;
+    border-radius: 1.5em;/*Redondea el ojeto*/
+    border: 6px outset black;
+}
+#Forma01 input, #Forma01 select, #Forma01 #regresar{
+    font-size: 1.5em;
+    border: 1px solid black;
+    border-radius: 0.25em;/*Redondea el ojeto*/
+    width: 100%;
+}
+#Forma01 label{
+    margin-inline-start: 0.5em;
+}
+#Forma01 #rol{
+    width: 45%;
+}
+
+/* COLORS COMPONENTS */
+h1{
+    text-align: center;
+}
+.info{
+    background-color: gainsboro/*rgba(240, 236, 236, 0.974)*/;
+}
+#Forma01 #regresar{
+    display:inline;
+    color:#000000;
+    background-color: #9406f2c5;
+    padding:0.2em 0.5em;
+    width: 4em;
+}
+#Forma01 #enviar{
+    color:#000000;
+    background-color: #ff8800;
+    padding:0.2em;
+    width: 4em;
+}
+#crearRegistro{
+    background-color: #9406f2c5;
+    color:#000000;
+    padding:5px;
+    width: 10em;
+}
+#crearRegistro:hover, #Forma01 #regresar:hover,
+#Forma01 #enviar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #00ff1e;
+}
+#detalles{
+    background-color: #0000ff;
+    color: white;  
+    padding: 0%;
+    font-stretch: normal;
+
+}
+#detalles:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #1f1fd892;
+}
+#editar{
+    background-color: #05bb05;
+    color: white; 
+
+}
+#editar:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #3b8a3baa;
+}
+#eliminar{
+    background-color: #ff0000;
+    color: white; 
+}
+#eliminar:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #d027279a;
+}
+/*Se aplica atributo cuando se da click al elemento*/
+#crearRegistro:active, #detalles:active, #enviar:active,
+#editar:active,#eliminar:active,#Forma01 #regresar:active{
+    background-color: #ff8800;
+}
