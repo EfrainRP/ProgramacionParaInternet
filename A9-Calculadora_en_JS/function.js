@@ -20,7 +20,7 @@ let operator = '';
 let display = $('#display'); //Variable para usar jQuery y obtener su valor
 
 function numberClicked(number) {//Funcion para escribir en el display
-    if(result == display.val()){ //Vacia el valor para una nueva operacion
+    if(result == display.val() || display.val() == 'NaN'){ //Vacia el valor para una nueva operacion
         display.val('');
     }else if((number == '.') && (display.val().includes('.'))){ //Evita poner varios puntos en el numero
         return;
@@ -42,13 +42,20 @@ function clearDisplay(text) { //Funcion para limpiar la calculadora
 }
 
 function operation(op) { //Funcion para seguir con el siguiente numero si se presiono el operador
-    op1 = display.val();
     operator = op;
-    display.val('');
+    if(op1 == ''){ //Si esta vacio el op1, guardara el valor
+        op1 = display.val();
+    }else{
+        calculate();// Si se sigue haciendo operaciones largas se iran acumulando las operaciones
+        op1=result;//Almacenandose en el op1 para seguir con la operacion
+    }
+    display.val('');//Limpia display
+    
 }
 
 function calculate() { //Realiza la operacion segun el operador almacenado
-    op2 = display.val();
+    op2 = display.val();//Utiliza el valor del display para realizar la ultima operacion para finalizar
+    
     switch(operator) {
         case '+':
             result = parseFloat(op1) + parseFloat(op2);
@@ -72,7 +79,9 @@ function calculate() { //Realiza la operacion segun el operador almacenado
             break;
     }
     display.val(result.toString()); //Pasamos el resultado al display
+    op1 = '';
 
+    console.log('calculate..........');
     console.log("op1: "+ op1);
     console.log("op2: "+ op2);
     console.log("op: "+ operator);
