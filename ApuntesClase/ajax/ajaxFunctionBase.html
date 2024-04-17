@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Ajax </title>
+<style>
+    #mensaje{
+        width: 200;
+        height: 25px;
+        background: #EFEFEF;
+        border-radius: 5px;
+        color:#F00;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: center;
+        margin-top: 20px;
+        padding: 5px;
+        display: none;
+    }
+</style>
+        <script src="../jquery/jquery-3.3.1.min.js"></script>
+        <script>
+            function calificarAjax(){
+                var calificacion = $('#calificacion').val();
+                if(calificacion > 0){
+                    /* Ajax permite ejecutar de forma asincrona, ejecutandose "detras" 
+                    de la pagina, sin perder la pagina principal*/
+
+                    // $('#mensaje').show();
+                    // $('#mensaje').html('Campo lleno');
+                    // setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
+
+                    $.ajax({ //metodo de js para ejecutar archivos de manera asincrona
+                        url: 'calificar.php', //
+                        type:'post', 
+                        dataType:'text',
+                        data:'calificacion='+calificacion,
+                        success:function(res){
+                            console.log(res);
+                            $('#mensaje').show();
+                            if(res == 1){
+                            $('#mensaje').html('Aprobaste');
+                            }else{
+                            $('#mensaje').html('Reprobaste');
+                            }
+                        },error:function(){
+                            alert('Error archivo no encontrado...');
+                        }
+                    });
+                }else{
+                    $('#mensaje').show();
+                    $('#mensaje').html('Llena el campo');
+                    setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="calificacion" id="calificacion"><br>
+        <a href="javascript:void(0);" onclick="calificarAjax();">Click para calificar</a>
+        <div id="mensaje"></div>
+    
+    </body>
+</html>
