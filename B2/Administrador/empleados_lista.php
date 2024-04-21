@@ -5,10 +5,35 @@
 <html>
     <head>
         <title>Listado de empleados</title>
-        <link href="./css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./css/style_.css?v=<?php echo time(); ?>">
         <!-- El ?v=.... evitar la caché del navegador. Genera una cadena de consulta con el tiempo actual 
         (time()) como un parámetro, lo que hace que el navegador considere cada solicitud como 
         única y no cargue la versión almacenada en caché del archivo CSS si ha cambiado.-->
+
+        <script src='../../jQuery/jquery-3.3.1.min.js'></script>
+        <script>
+            function eliminaAjax(id){
+                if(confirm("¿Seguro de que quieres eliminar este empleado?")){//Segun lo que salga en la ventana de confirmacion, ejecutara el archivo
+                    $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
+                        url: './empleados_elimina.php', //
+                        type:'post', 
+                        dataType:'text',
+                        data:'id='+id,
+                        success:function(res){
+                            console.log(res);
+                            if(res == 1){//Se elimina cuando el valor res del evento es 1
+                                $('.info'+id).hide(); //Esconde los elementos con id seleccionado
+                            }else{
+                                console.log('Error al eliminar');
+                            }
+                        },error:function(){
+                            alert('Error archivo no encontrado...');
+                        }
+                    });
+                }
+            }
+        </script>
+
     </head>
     <body>
         <?php //Consulta a la base de datos de empleados activos y no eliminados
@@ -47,14 +72,16 @@
                     }
 
                     // Datos obtenidos de la consulta
-                    echo "<div class='info' id='$id'>$id</div>
-                        <div class='info' id='nombre'>$nombre</div>
-                        <div class='info' id='apellidos'>$apellidos</div>
-                        <div class='info' id='correro'>$correo</div>
-                        <div class='info' id='rol'>$rol</div>
-                        <a class='opciones' id='detalles' href='detalles.com'>Ver detalles</a>
-                        <a class='opciones' id='editar' href='editar.com'>Editar</a>
-                        <a class='opciones' id='eliminar' href='./empleados_elimina.php?id=$id'>Eliminar</a>";
+                    echo "
+                    <div class='info$id' id='$id'>$id</div>
+                        <div class='info$id' id='nombre'>$nombre</div>
+                        <div class='info$id' id='apellidos'>$apellidos</div>
+                        <div class='info$id' id='correro'>$correo</div>
+                        <div class='info$id' id='rol'>$rol</div>
+                        <a class='info$id' id='detalles' href='detalles.com'>Ver detalles</a>
+                        <a class='info$id' id='editar' href='editar.com'>Editar</a>
+                        <a class='info$id' id='eliminar' href='javascript:void(0);' onclick='eliminaAjax($id);'>Eliminar</a>
+                        ";
                         // Los href's se cambiara en un futuro, es provicional
                 }
             ?>
