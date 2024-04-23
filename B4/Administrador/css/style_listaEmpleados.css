@@ -65,7 +65,6 @@ div[class^='info']{
 #editar{
     background-color: #05bb05;
     color: white; 
-
 }
 #editar:hover{/*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: #3b8a3baa;

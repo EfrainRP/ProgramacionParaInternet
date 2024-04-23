@@ -3,7 +3,6 @@ body{
     background: linear-gradient(-145deg,#5835e6e2,#d19674f9); /*Ajusta el degradado de los colores*/
     font-size: 14px;
     width: 99%;
-    height: 70%;
 }
 #Forma01{
     margin:auto;
@@ -11,7 +10,7 @@ body{
     text-align: center;
     width:20%;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
-    background-color: white ;
+    background-color: gainsboro;
     border-radius: 1.5em;/*Redondea el ojeto*/
     border: 6px outset black;
 }

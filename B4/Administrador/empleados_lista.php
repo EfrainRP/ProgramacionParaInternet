@@ -78,7 +78,7 @@
                         <div class='info$id' id='apellidos'>$apellidos</div>
                         <div class='info$id' id='correro'>$correo</div>
                         <div class='info$id' id='rol'>$rol</div>
-                        <a class='info$id' id='detalles' href='detalles.com'>Ver detalles</a>
+                        <a class='info$id' id='detalles' href='./empleados_detalles.php?id=$id'>Ver detalles</a>
                         <a class='info$id' id='editar' href='editar.com'>Editar</a>
                         <a class='info$id' id='eliminar' href='javascript:void(0);' onclick='eliminaAjax($id);'>Eliminar</a>
                         ";
