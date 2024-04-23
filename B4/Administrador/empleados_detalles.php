@@ -21,8 +21,7 @@
                 $res = $con->query($sql); //ejecuta una consulta en la conexion
             
                 // Verificar la consulta echa
-                if ($res->num_rows > 0) {
-                    while ($row = $res->fetch_array()) {
+                if ($row = $res->fetch_array()) {
                         $nombre = $row["nombre"];
                         $apellidos = $row["apellidos"];
                         $correo = $row["correo"];
@@ -54,7 +53,6 @@
                             <div id='etiqueta'>Estatus: </div>
                             <div id='info'>$estatus</div>
                         </div>";
-                    }
                 } else {
                     echo "No se encontraron resultados para la ID deseado";
                 }
