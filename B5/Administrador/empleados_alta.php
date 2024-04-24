@@ -26,26 +26,27 @@
             }
             function validarCorreo(){
                 var correo = $('#correo').val(); //Obtenemos el valor del correo del formulario
-
-                $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                        url: './empleados_validaCorreo.php', //
-                        type:'post', 
-                        dataType:'text',
-                        data:'correo='+correo,
-                        success:function(res){
-                            console.log(res);
-                            if(res > 0){//Se recibe la cantidad de filas encontraras de la consulta, mayor a 0 es correo ya existe
-                                $('#correo').val('');//Vacia el valor del input correo
-                                $('#mensajeCorreo').show();//Muestra el contenedor
-                                $('#mensajeCorreo').html('El correo <u>'+correo+'</u> ya existe.'); //Escribe el mensaje en el contenedor
-                                setTimeout("$('#mensajeCorreo').html(''); $('#mensajeCorreo').hide();", 5000);//Ejecuta esas funciones para el contenedor
-                            }else{
-                                console.log('Error al validar');
+                if(correo){
+                    $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
+                            url: './empleados_validaCorreo.php', //
+                            type:'post', 
+                            dataType:'text',
+                            data:'correo='+correo,
+                            success:function(res){
+                                console.log('res: '+res);
+                                if(res == 0 ){
+                                    console.log('Correo no repetido');
+                                }else if(res > 0){//Se recibe la cantidad de filas encontraras de la consulta, mayor a 0 es correo ya existe
+                                    $('#correo').val('');//Vacia el valor del input correo
+                                    $('#mensajeCorreo').show();//Muestra el contenedor
+                                    $('#mensajeCorreo').html('El correo <u>'+correo+'</u> ya existe.'); //Escribe el mensaje en el contenedor
+                                    setTimeout("$('#mensajeCorreo').html(''); $('#mensajeCorreo').hide();", 5000);//Ejecuta esas funciones para el contenedor
+                                }
+                            },error:function(){
+                                alert('Error archivo no encontrado...');
                             }
-                        },error:function(){
-                            alert('Error archivo no encontrado...');
-                        }
-                    });
+                        });
+                }
             }
         </script>
     </head>
