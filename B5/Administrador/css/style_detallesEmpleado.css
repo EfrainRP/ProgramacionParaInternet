@@ -49,7 +49,7 @@ body{
 
 h1{
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.5vw;/*vw permite ajustar el texto conforme el tamaño de la ventana */
 }
 
 #contenedor #regresar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/

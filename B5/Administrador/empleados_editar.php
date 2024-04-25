@@ -5,9 +5,9 @@
 ?>
 <html>
     <head>
-        <title>Edicion de empleados</title>
-        <link href="./css/style_altaEmpleado.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
-        
+        <title>Edición de empleados</title>
+        <link href="./css/style_formDataEmpleado.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+
         <script src='../../jQuery/jquery-3.3.1.min.js'></script>
         <script>
             function validarCampos(){
@@ -18,12 +18,10 @@
                 var rol = document.Forma01.rol.value;
                 
                 if(nombre == '' || apellidos == '' || correo == '' || rol == "0"){ //Si esta algun campo vacio
-                    // alert("Faltan campos por llenar :(");
                     $('#mensaje').show();
                     $('#mensaje').html('Faltan campos por llenar  :(');
                     setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
                 }else{  // Si no estan vacios los campos
-                    // alert("Campos llenos :)");
                     // documment.Forma01.method = "post"; 
                     // document.Forma01.action = "./empleados_salva.php";
                     document.Forma01.submit(); //Se ejecuta el envio de los datos al archivo empleados_salva.php
@@ -40,9 +38,9 @@
                             data:'correo='+correo,
                             success:function(res){
                                 console.log('res: '+res);
-                                if(res == 0 ){
+                                if(res == 0 ){//Si regresa un 0, correo no repetido
                                     console.log('Correo no repetido');
-                                }else if (res != id){
+                                }else if (res != id){ //Si es diferente el id a editar con el id recibido de la consulta sql,-> id repetido
                                     $('#correo').val('');//Vacia el valor del input correo
                                     $('#mensajeCorreo').show();//Muestra el contenedor
                                     $('#mensajeCorreo').html('El correo <u>'+correo+'</u> ya existe.'); //Escribe el mensaje en el contenedor
@@ -61,7 +59,7 @@
         <br><br><br>
         <!-- se manda las variables al archivo -->
         <form name="Forma01" id="Forma01" method="post" action="./empleados_actualiza.php">
-            <h1>Edicion de empleados</h1>
+            <h1>Edición de empleados</h1>
             
             <?php
                 $sql = "SELECT * FROM empleados
@@ -70,23 +68,18 @@
                 $res = $con->query($sql); //ejecuta una consulta en la conexion
             
                 // Verificar la consulta echa
-                if ($row = $res->fetch_assoc()) {
+                if ($row = $res->fetch_assoc()) {//si regresa una fila, asigna valores para el formulario
                     $nombre = $row["nombre"];
                     $apellidos = $row["apellidos"];
                     $correo = $row["correo"];
                     $pass = $row["pass"];
                     $rol = $row["rol"];
-                } else {
+                } else {//Sino encuentra id, regresa al listado
                     // echo "No se encontraron resultados para la ID deseado";
-                    $nombre = '';
-                    $apellidos = '';
-                    $correo = '';
-                    $pass = '';
-                    $rol = '';
-                    header("Location: empleados_lista.php");
+                    header("Location: empleados_lista.php"); 
                 }
             ?>
-            <input type="hidden" name="id" id="id" value="<?php echo $id; ?>"> <!-- Dato escondido, necesario para el formulario-->
+            <input type="hidden" name="id" id="id" value="<?php echo $id; ?>"> <!-- Dato escondido, necesario para el formulario y el ajax-->
 
             <label for ="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" value="<?php echo $nombre; ?>" placeholder="Escribe tu nombre ">
@@ -109,12 +102,10 @@
                 <option value="2" <?php if ($rol == 2) echo 'selected="selected"';?>>Ejecutivo</option>
             </select>
             <br><br>
-            <!-- <label id="archivo" for="archivo" >Archivo:</label>
-            <input type="file" name="archivo" id="archivo" value="<?php echo $archivo;?>"><br><br> -->
 
-            <a class="opciones" id="regresar" href="./empleados_lista.php">Regresar al listado</a> <br><br>
+            <a class="opciones" id="regresar" href="./empleados_lista.php">Regresar al listado</a>
             
-            <input class="opciones" id="enviar" type="submit" onclick="validarCampos(); return false;" value="Enviar">
+            <input class="opciones" id="enviar" type="submit" onclick="validarCampos(); return false;" value="Enviar"><br><br>
             
             <div id="mensaje"></div>
             <script>$('#mensaje').hide();$('#mensajeCorreo').hide()</script>
