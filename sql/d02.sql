@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2024 at 03:27 PM
+-- Generation Time: May 02, 2024 at 05:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -68,7 +68,6 @@ CREATE TABLE `productos` (
   `descripcion` text NOT NULL,
   `costo` double NOT NULL,
   `stock` int(11) NOT NULL,
-  `archivo_n` varchar(255) NOT NULL,
   `archivo` varchar(128) NOT NULL,
   `status` int(1) NOT NULL DEFAULT 1,
   `eliminado` int(1) NOT NULL DEFAULT 0
