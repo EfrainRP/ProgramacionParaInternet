@@ -1,0 +1,46 @@
+#menu{
+    width: auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+
+}
+#menu a{
+    background-color: #FCE181;
+    padding: 0.1% 0.01%;
+    margin: 0.1%;
+    display: flex; /*Contenedor flexible*/
+    justify-content: space-around; /*Se distribuye equitativamente el espacio del contenido*/
+    align-items: center; /*Se distribuye verticalmente en el centro*/
+    border: 1px solid #000000;
+    border-radius: 0.45em;/*Redondea el ojeto*/
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    /* width: auto; */
+    font-size: 1.2em; /*se multiplica el valor padre de letra por 1.2em*/
+    color: black;
+}
+#menu a:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #ffb404;
+}
+#menu #inicio{
+    width: 10%;
+}
+#menu #empleados{
+    width: 20%;
+}
+#menu #productos{
+    width: 20%;
+}
+#menu #promociones{
+    width: 25%;
+}
+#menu #pedidos{
+    width: 15%;
+}
+#menu #bienvenido{
+    width:25%;
+}
+#menu #cerrar{
+    width: 30%;
+}
