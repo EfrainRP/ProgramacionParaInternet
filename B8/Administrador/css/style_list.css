@@ -39,6 +39,7 @@ body{
 /* COLORS COMPONENTS */
 h1{
     text-align: center;
+    font-size: 2em;
 }
 div[class^='info']{
     background-color: gainsboro/*rgba(240, 236, 236, 0.974)*/;

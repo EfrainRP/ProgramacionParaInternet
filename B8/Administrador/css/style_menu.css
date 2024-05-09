@@ -1,13 +1,13 @@
 #menu{
     width: 100%;
     display:flex;
-    align-items: center;
+    align-items:start;
     justify-content: space-between;
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
 }
 #menu a, #menu #bienvenido{
     background-color: #FCE181;
-    padding: 0.1% 1%;
+    padding: 0.1% 0.01%;
     margin: 0.1%;
     text-align: center;
     border: 1px solid #000000;
@@ -15,32 +15,33 @@
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     font-size: 1.2em; /*se multiplica el valor padre de letra por 1.2em*/
     color: black;
-    flex: 1;
 }
 #menu a:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: #ffb404;
 }
 #menu a:active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
-    background-color: #d0fb6c;
+    background-color: #6cfbb6;
 }
-#menu #bienvenido{
-    background-color:#ff8e04;
-}
-/*#menu #inicio{
+#menu #inicio{
+    width: 8%;
 }
 #menu #empleados{
-    width: 20%;
+    width: 15%;
 }
 #menu #productos{
     width: 15%;
 }
 #menu #promociones{
-    width: 20%;
+    width: 18%;
 }
 #menu #pedidos{
     width: 15%;
 }
-
+#menu #bienvenido{
+    background-color:#ece8ef;
+    width: 28%;
+}
 #menu #cerrar{
-    width: 20%;
-} */
+    width: 17%;
+
+}

@@ -1,7 +1,7 @@
-<?php //Conexion y verificacion de la base de datos
-    session_start();
+<?php 
+    session_start(); //inicia una nueva sesión o reanuda la existente
     
-    require "./conecta.php";
+    require "./conecta.php"; //Conexion y verificacion de la base de datos
     $con = conecta();//conecta y verifica si se hizo bien
     
     //Recibe variable
@@ -15,14 +15,14 @@
 
     if($res == TRUE){ //Verificacion de consulta SELECT
         $num = $res->num_rows; //cantidad de filas encontradas
-        if ($num == 1){
+        if ($num == 1){//Encontro una consulta (la deseada), se crea la sesion
             $row = $res->fetch_array();
 
             $id = $row["id"];
-            $nombre = $row["nombre"];
+            $nombre = $row["nombre"].' '.$row["apellidos"];
             $correo = $row["correo"];
 
-            //Variables de session iniciadas
+            //Variables de sesion iniciadas
             $_SESSION['idUser'] = $id;
             $_SESSION['nombreUser'] = $nombre;
             $_SESSION['correoUser'] = $correo;

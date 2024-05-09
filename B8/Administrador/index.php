@@ -3,7 +3,7 @@
      session_start(); //inicia una nueva sesión o reanuda la existente
 
     if(isset($_SESSION['nombreUser'])){ //Si esta declarado, se inicio sesion
-        header("Location: bienvenido.php");//regresa al login
+        header("Location: bienvenido.php");//se va al bienvenido
     }
 ?>
 <html>
@@ -59,7 +59,7 @@
             <input type="text" name="correo" id="correo" placeholder="Escribe tu correo ">
         
             <label for="pass">Contraseña:</label>
-            <input type="text" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
+            <input type="password" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
             
             <input class="opciones" id="enviar" type="submit" onclick="validarCampos(); return false;" value="Enviar"><br><br>
             

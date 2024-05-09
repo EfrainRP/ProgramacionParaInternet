@@ -95,7 +95,7 @@
             <div id="mensajeCorreo"></div>
         
             <label for="pass">Contraseña:</label>
-            <input type="text" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
+            <input type="password" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
 
             <label id="roles" for="rol">Rol:</label>
             <select name="rol" id="rol">
