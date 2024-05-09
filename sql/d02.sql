@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 02, 2024 at 05:01 PM
+-- Generation Time: May 09, 2024 at 04:59 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -45,7 +45,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `correo`, `pass`, `rol`, `archivo_n`, `archivo`, `status`, `eliminado`) VALUES
-(1, 'Efrain', 'Robles Pulido', 'efrain.robles@gmail.com', '668959847cdc4461e7253b5af2b5856e', 1, '', '', 1, 0),
+(1, 'Efrain', 'Robles Pulido', 'efrain.robles@gmail.com', '902e756b0329c9f938111643ae5f1425', 1, '', '', 1, 0),
 (2, 'Juan', 'Gutierrez Ramos', 'juan@gmail.com', 'Abc123', 2, '', '', 1, 0),
 (3, 'Miguel', 'Gonzales Gallo', 'miguel@mail.com', 'miguel123', 2, '', '', 1, 0),
 (4, 'Marco', 'Polo Madrid', 'marco@gmail.com', 'marco456', 1, '', '', 1, 0),
