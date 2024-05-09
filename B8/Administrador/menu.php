@@ -9,8 +9,8 @@
         <a id="productos" href="#">Productos</a>
         <a id="promociones" href="#">Promociones</a>
         <a id="pedidos" href="#">Pedidos</a>
-        <a id="bienvenido" href="./bienvenido.php">Bienvenido <?php echo $_SESSION['nombreUser']; ?></a>
-        <a id="cerrar" href="#">Cerrar Sesion</a>
+        <span id="bienvenido">Bienvenido <?php echo $_SESSION['nombreUser']; ?></span>
+        <a id="cerrar" href="./func/destroy_session.php">Cerrar Sesion</a>
     </div>
     </body>
 

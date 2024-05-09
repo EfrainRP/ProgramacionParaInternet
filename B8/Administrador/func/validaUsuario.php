@@ -22,6 +22,7 @@
             $nombre = $row["nombre"];
             $correo = $row["correo"];
 
+            //Variables de session iniciadas
             $_SESSION['idUser'] = $id;
             $_SESSION['nombreUser'] = $nombre;
             $_SESSION['correoUser'] = $correo;
