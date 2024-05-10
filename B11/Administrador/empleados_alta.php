@@ -1,7 +1,10 @@
+<?php 
+    require "./func/session.php"; // Verifica que se inicio sesion
+?>
 <html>
     <head>
         <title>Alta de empleados</title>
-        <link href="./css/style_formDataEmpleado.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <link href="./css/style_formData.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
         
         <script src='../../jQuery/jquery-3.3.1.min.js'></script>
         <script>
@@ -51,6 +54,7 @@
     </head>
 
     <body>
+        <?php include('menu.php'); ?><!-- Agrega la parte del menu en el html -->
         <br><br><br>
         <!-- se manda las variables al archivo -->
         <form name="Forma01" id="Forma01" method="post" action="./empleados_salva.php" enctype="multipart/form-data">
@@ -69,7 +73,7 @@
             <div id="mensajeCorreo"></div>
             
             <label for="pass">Contraseña:</label>
-            <input type="text" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
+            <input type="password" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
 
             <label id="roles" for="rol">Rol:</label>
             <select name="rol" id="rol">

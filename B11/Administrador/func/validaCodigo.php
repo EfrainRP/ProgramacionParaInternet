@@ -1,11 +1,12 @@
 <?php //Conexion y verificacion de la base de datos
-    require "./func/conecta.php";
+    require "./conecta.php";
     $con = conecta();//conecta y verifica si se hizo bien
     
     //Recibe variable
-    $correo =$_REQUEST['correo'];
+    $codigo =$_REQUEST['codigo'];
 
-    $sql = "SELECT id FROM empleados WHERE correo = '$correo';"; //Buscamos algun id con correo repetido
+    $sql = "SELECT id FROM productos WHERE codigo = '$codigo' AND status = '1' 
+            AND eliminado ='0';"; //Buscamos algun id con codigo repetido
 
     $res = $con->query($sql); //ejecuta una consulta en la conexion
 

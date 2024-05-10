@@ -5,16 +5,13 @@
     //Recibe variables
     $id = $_REQUEST['id'];
     $nombre =$_REQUEST['nombre'];
-    $apellidos =$_REQUEST['apellidos'];
-    $correo =$_REQUEST['correo'];
-    $rol =$_REQUEST['rol'];
+    $codigo =$_REQUEST['codigo'];    
+    $descripcion =$_REQUEST['descripcion'];
+    $costo =$_REQUEST['costo'];
+    $stock =$_REQUEST['stock'];
     
-    $sql = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', rol = '$rol'"; //Consulta sql original
-
-    if ($pass = $_REQUEST['pass']){ //Si esta lleno el dato de $pass de la contraseña
-        $passEnc = md5($pass); //Encripta la contraseña
-        $sql = $sql.", pass = '$passEnc'"; //Consulta sql modificada para la contraseña encriptada
-    }
+    $sql = "UPDATE productos SET nombre = '$nombre', codigo = '$codigo', descripcion = '$descripcion', 
+            costo = '$costo', stock = '$stock'"; //Consulta sql original
 
     if($archivo_n = $_FILES['archivo'] ['name']){//Si esta lleno la variable definida por el FILES, se ejecutara, Nombre real del archivo
         $archivo_f = $_FILES['archivo'] ['tmp_name'];//Nombre temporal del archivo
@@ -43,5 +40,5 @@
         echo "Error al ejecutar la consulta: " . $con->error;
     }
 
-    header("Location: empleados_lista.php");//Regresa a la pagina
+    header("Location: productos_lista.php");//Regresa a la pagina
 ?>

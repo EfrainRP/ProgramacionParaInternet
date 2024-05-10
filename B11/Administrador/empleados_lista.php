@@ -1,11 +1,13 @@
-<?php //Conexion y verificacion de la base de datos
-    require "./func/conecta.php";
+<?php 
+    require "./func/session.php"; // Verifica que se inicio sesion
+    
+    require "./func/conecta.php"; //Conexion y verificacion de la base de datos
     $con = conecta();//conecta y verifica si se hizo bien
 ?>
 <html>
     <head>
         <title>Listado de empleados</title>
-        <link rel="stylesheet" type="text/css" href="./css/style_listaEmpleados.css?v=<?php echo time(); ?>">
+        <link rel="stylesheet" type="text/css" href="./css/style_list.css?v=<?php echo time(); ?>">
         <!-- El ?v=.... evitar la caché del navegador. Genera una cadena de consulta con el tiempo actual 
         (time()) como un parámetro, lo que hace que el navegador considere cada solicitud como 
         única y no cargue la versión almacenada en caché del archivo CSS si ha cambiado.-->
@@ -36,9 +38,10 @@
 
     </head>
     <body>
-        <?php //Consulta a la base de datos de empleados activos y no eliminados
+        <?php 
+            include('menu.php'); // Agrega la parte del menu en el html
             $sql = "SELECT * FROM empleados
-                    WHERE status = 1 AND eliminado = 0";
+                    WHERE status = 1 AND eliminado = 0";//Consulta a la base de datos de empleados activos y no eliminados
 
             $res = $con->query($sql); //ejecuta una consulta en la conexion
             $num = $res->num_rows;
@@ -49,12 +52,14 @@
         <br>
         <div class="table">
             <!-- Header de la tabla -->
-            <div class='header' id="id"><b>ID</b></div>
-            <div class='header' id="nombre"><b>Nombre</b></div>
-            <div class='header' id="apellidos"><b>Apellidos</b></div>
-            <div class='header' id="correo"><b>Correos</b></div>
-            <div class='header' id="rol"><b>Roles</b></div>
-            <div class="header" id="opciones"><b>Opciones</b></div>
+            <div class='header'>
+                <div id="id"><b>ID</b></div>
+                <div id="nombre"><b>Nombre</b></div>
+                <div id="apellidos"><b>Apellidos</b></div>
+                <div id="correo"><b>Correos</b></div>
+                <div id="rol"><b>Roles</b></div>
+                <div id="opciones"><b>Opciones</b></div>
+            </div>
             
             <?php
                 /*fetch_array nos recupera una fila de resultados 
@@ -73,15 +78,16 @@
 
                     // Datos obtenidos de la consulta
                     echo "
-                    <div class='info$id' id='$id'>$id</div>
-                        <div class='info$id' id='nombre'>$nombre</div>
-                        <div class='info$id' id='apellidos'>$apellidos</div>
-                        <div class='info$id' id='correro'>$correo</div>
-                        <div class='info$id' id='rol'>$rol</div>
-                        <a class='info$id' id='detalles' href='./empleados_detalles.php?id=$id'>Ver detalles</a>
-                        <a class='info$id' id='editar' href='./empleados_editar.php?id=$id'>Editar</a>
-                        <a class='info$id' id='eliminar' href='javascript:void(0);' onclick='eliminaAjax($id);'>Eliminar</a>
-                        ";
+                    <div class='info$id'>
+                        <div id='id'>$id</div>
+                        <div id='nombre'>$nombre</div>
+                        <div id='apellidos'>$apellidos</div>
+                        <div id='correro'>$correo</div>
+                        <div id='rol'>$rol</div>
+                        <a id='detalles' href='./empleados_detalles.php?id=$id'>Ver detalles</a>
+                        <a id='editar' href='./empleados_editar.php?id=$id'>Editar</a>
+                        <a id='eliminar' href='javascript:void(0);' onclick='eliminaAjax($id);'>Eliminar</a>
+                    </div>";
                         // Los href's se cambiara en un futuro, es provicional
                 }
             ?>

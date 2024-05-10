@@ -1,7 +1,15 @@
+<?php
+     // Verifica que se inicio sesion
+     session_start(); //inicia una nueva sesión o reanuda la existente
+
+    if(isset($_SESSION['nombreUser'])){ //Si esta declarado, se inicia sesion
+        header("Location: bienvenido.php");//se va al bienvenido
+    }
+?>
 <html>
     <head>
         <title>Login</title>
-        <link href="./css/style_formDataEmpleado.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <link href="./css/style_formData.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
 
         <script src='../../jQuery/jquery-3.3.1.min.js'></script>
         <script>
@@ -15,7 +23,7 @@
                     setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
                 }else{  // Si estan llenos los campos
                     $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                        url: './empleados_validaUsuario.php', //
+                        url: './func/validaUsuario.php', //
                         type:'post', 
                         dataType:'text',
                         data:'correo='+correo+'&pass='+pass,
@@ -51,7 +59,7 @@
             <input type="text" name="correo" id="correo" placeholder="Escribe tu correo ">
         
             <label for="pass">Contraseña:</label>
-            <input type="text" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
+            <input type="password" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
             
             <input class="opciones" id="enviar" type="submit" onclick="validarCampos(); return false;" value="Enviar"><br><br>
             

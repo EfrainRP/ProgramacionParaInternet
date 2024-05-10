@@ -1,5 +1,6 @@
-<?php //Conexion y verificacion de la base de datos
-    require "./func/conecta.php";
+<?php 
+    require "./func/session.php"; // Verifica que se inicio sesion
+    require "./func/conecta.php";//Conexion y verificacion de la base de datos
     $con = conecta();//conecta y verifica si se hizo bien
     $id = $_REQUEST['id']; //recibe el valor de la id deseado
 ?>
@@ -7,10 +8,11 @@
 <html>
     <head>
         <title>Detalles de empleado</title>
-        <link href="./css/style_detallesEmpleado.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <link href="./css/style_details.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
     </head>
 
     <body>
+        <?php include('menu.php'); ?><!-- Agrega la parte del menu en el html -->
         <br><br><br>
         <div id="contenedor">
             <h1>Detalles de empleado</h1>
@@ -35,26 +37,26 @@
                         }
                         
                         echo "
-                        <div id='data'> 
+                        <div class='data'> 
                             <img id='imagen' src='./archivos/$archivo'>
                         </div>
                         
-                        <div id='data'> 
+                        <div class='data'> 
                             <div id='etiqueta'>Nombre completo: </div>
                             <div id='info'>$nombre $apellidos</div>
                         </div>
 
-                        <div id='data'> 
+                        <div class='data'> 
                             <div id='etiqueta'>Correo: </div>
                             <div id='info'>$correo</div>
                         </div>
                         
-                        <div id='data'> 
+                        <div class='data'> 
                             <div id='etiqueta'>Rol: </div>
                             <div id='info'>$rol</div>
                         </div>
 
-                        <div id='data'> 
+                        <div class='data'> 
                             <div id='etiqueta'>Estatus: </div>
                             <div id='info'>$estatus</div>
                         </div>";

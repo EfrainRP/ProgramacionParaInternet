@@ -8,7 +8,8 @@ body{
     padding: 1em;
     text-align: center;
     width:20%;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
+    min-width: 350px;
+    box-shadow: 0 0 60px #00000061; /*Le da una sobra al objeto*/
     background-color: gainsboro;
     border-radius: 1.5em;/*Redondea el ojeto*/
     border: 6px outset black;
@@ -20,6 +21,13 @@ body{
     width: 90%;
     margin: 1.6% 0;
 }
+#Forma01 select{
+    font-size: 1.3em;
+    width: 76%;
+    border-radius: 0.25em;/*Redondea el ojeto*/
+    margin: 3% 2%;
+    color: #2a2929;
+}
 #Forma01 label{
     color:#767676;
     font-size: 1.2em;
@@ -29,7 +37,11 @@ body{
     text-align: left;
     margin-left: 5%;
 }
-#Forma01 #mensaje{
+#Forma01 #roles{
+    display:inline;
+    margin-left: 1%;
+}
+#Forma01 #mensaje, #Forma01 #mensajeCorreo, #Forma01 #mensajeCodigo{
     padding: 2%;
     font-size: 1.2em;
     color:#ff0000;
@@ -44,7 +56,7 @@ h1{
     font-size: 1.7em;
     color:#000000;
     border: 3px outset black;
-    background-color: #9406f2c5;
+    background-color: #9900ff;
     padding:0em 0.5em;
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     width: 5em;
@@ -59,10 +71,18 @@ h1{
     width: 4em;
 }
 
-#Forma01 #regresar:hover, #Forma01 #enviar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
-    background-color: #00ff1e;
+#Forma01 #regresar:hover{
+    background-color: #bb5afce6;
+}
+
+#Forma01 #enviar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #efaf67;
+}
+#Forma01 #regresar:active, #Forma01 input[type="submit"]:active{
+    background-color: #07f507;
 }
 /*Se aplica atributo cuando se da click al elemento*/
-#enviar:active,#Forma01 #regresar:active{
+/* #enviar:active,#Forma01 #regresar:active{
     background-color: #ff8800;
-}
+} */
+

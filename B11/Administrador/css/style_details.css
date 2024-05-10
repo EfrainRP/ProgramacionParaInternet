@@ -13,7 +13,7 @@ body{
     border: 6px outset black;
     background-color: gainsboro;
 }
-#contenedor #data{
+#contenedor .data{
     display: flex;
     margin: 2% 0;
     padding: 1% 0;
@@ -24,7 +24,6 @@ body{
 #contenedor #etiqueta{
     color:#767676;
     font-size: 1vw; /*vw permite ajustar el texto conforme el tamaño de la ventana */
-    text-align: left;
     width: 44%;
     text-align: right;
 }
@@ -36,7 +35,7 @@ body{
     justify-self: left;
     padding-left: 2%;
 }
-#contenedor #data #imagen{
+#contenedor .data #imagen{
     width: 50%;
     margin: auto;
 }

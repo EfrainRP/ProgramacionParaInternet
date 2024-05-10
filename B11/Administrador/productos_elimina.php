@@ -6,7 +6,7 @@
 
     // $sql = "DELETE FROM empleados WHERE id = $id"; //elimina segun el id seleccionado
 
-    $sql = "UPDATE empleados SET eliminado = 1 WHERE id = $id"; //Actualiza el valor eliminado a 1
+    $sql = "UPDATE productos SET eliminado = 1 WHERE id = $id"; //Actualiza el valor eliminado a 1
 
     $res = $con->query($sql); //ejecuta una consulta en la conexion
     
