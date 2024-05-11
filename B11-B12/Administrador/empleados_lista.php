@@ -1,6 +1,5 @@
 <?php 
     require "./func/session.php"; // Verifica que se inicio sesion
-    
     require "./func/conecta.php"; //Conexion y verificacion de la base de datos
     $con = conecta();//conecta y verifica si se hizo bien
 ?>

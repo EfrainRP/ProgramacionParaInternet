@@ -2,7 +2,6 @@
 body{
     background: linear-gradient(-145deg,#35a5e6e2,#74d185f9); /*Ajusta el degradado de los colores*/
     font-size: 14px;
-    width: 99%;
 }
 a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
@@ -15,7 +14,8 @@ a{
     box-shadow: 0 0 60px #00000061; /*Le da una sobra al objeto*/
     border-radius: 0.8em;/*Redondea el ojeto*/ 
     /* background-color: #1f9de5e2; */
-    width: 100%;
+    width: auto;
+    margin: auto;
 }
 .table .header, .table div[class^='info']{ /*[class^='info'] selecciona la clase que empieza con 'info' */
     display: grid;
@@ -29,12 +29,14 @@ a{
     display: flex; /*Contenedor flexible*/
     justify-content: space-around; /*Se distribuye equitativamente el espacio del contenido*/
     align-items: center; /*Se distribuye verticalmente en el centro*/
-    /* border: 1px solid #000000; */
     border-radius: 0.45em;/*Redondea el ojeto*/
     padding: 0.65%;
     margin: 0.09em 0.5%;
     font-size: 1.2em; /*se multiplica el valor padre de letra por 1.2em*/
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    text-align: center;
+    height:auto;
+    word-break: break-all; /* Se rompe la palabra para ajustarlo al div*/
 }
 .header #opciones{
     grid-column: span 3;

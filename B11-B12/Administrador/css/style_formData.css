@@ -56,7 +56,7 @@ h1{
     font-size: 1.7em;
     color:#000000;
     border: 3px outset black;
-    background-color: #9900ff;
+    background-color: #a221f9;
     padding:0em 0.5em;
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     width: 5em;
@@ -72,7 +72,7 @@ h1{
 }
 
 #Forma01 #regresar:hover{
-    background-color: #bb5afce6;
+    background-color: #c57ef4;
 }
 
 #Forma01 #enviar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
