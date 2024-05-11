@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 11, 2024 at 05:26 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-05-2024 a las 21:57:06
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `d02`
+-- Base de datos: `d02`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empleados`
+-- Estructura de tabla para la tabla `empleados`
 --
 
 CREATE TABLE `empleados` (
@@ -41,7 +41,7 @@ CREATE TABLE `empleados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `empleados`
+-- Volcado de datos para la tabla `empleados`
 --
 
 INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `correo`, `pass`, `rol`, `archivo_n`, `archivo`, `status`, `eliminado`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `correo`, `pass`, `rol`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `productos`
+-- Estructura de tabla para la tabla `productos`
 --
 
 CREATE TABLE `productos` (
@@ -75,16 +75,17 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `productos`
+-- Volcado de datos para la tabla `productos`
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `codigo`, `descripcion`, `costo`, `stock`, `archivo_n`, `archivo`, `status`, `eliminado`) VALUES
-(16, 'iphone', '12345', 'Celular', 342.234, 3, 'MT223.jpeg', '1be7dcf08c7e94034fdaffde8f34a003.jpeg', 1, 0);
+(1, 'Iphone 12', '123', 'celular', 13500, 3, 'iphone.jpg', 'a7a8b65af751b37d22608d5ccb214552.jpg', 1, 0),
+(2, 'Samsung', '1234', 'Celular samsung', 15000, 1, 'samsung.jpg', 'e1947a45f82c8b42cd671e530bc54507.jpg', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promociones`
+-- Estructura de tabla para la tabla `promociones`
 --
 
 CREATE TABLE `promociones` (
@@ -96,56 +97,55 @@ CREATE TABLE `promociones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `promociones`
+-- Volcado de datos para la tabla `promociones`
 --
 
 INSERT INTO `promociones` (`id`, `nombre`, `archivo`, `status`, `eliminado`) VALUES
-(1, '2x1 4345gh', 'fa01e38d3a6e74a79175ae8152fb30f6.png', 1, 1),
-(2, 'inakjnkmnlm', 'fa01e38d3a6e74a79175ae8152fb30f6.png', 1, 0);
+(1, '50%', '2ef3703e52088088c2d0eb8acfff38b8.jpg', 1, 0);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `empleados`
+-- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `productos`
+-- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `promociones`
+-- Indices de la tabla `promociones`
 --
 ALTER TABLE `promociones`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `empleados`
+-- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `productos`
+-- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `promociones`
+-- AUTO_INCREMENT de la tabla `promociones`
 --
 ALTER TABLE `promociones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

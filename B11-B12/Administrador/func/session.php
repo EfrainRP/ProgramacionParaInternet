@@ -5,9 +5,9 @@
         header("Location: index.php");//regresa al login
     }else {
         //Variables de sesion
-        $id = $_SESSION['idUser'];
-        $nombre = $_SESSION['nombreUser'];
-        $correo = $_SESSION['correoUser'];
+        $idSession = $_SESSION['idUser'];
+        $nombreSession = $_SESSION['nombreUser'];
+        $correoSession = $_SESSION['correoUser'];
     }
 
 ?>

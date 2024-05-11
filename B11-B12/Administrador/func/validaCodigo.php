@@ -5,8 +5,8 @@
     //Recibe variable
     $codigo =$_REQUEST['codigo'];
 
-    $sql = "SELECT id FROM productos WHERE codigo = '$codigo' AND status = '1' 
-            AND eliminado ='0';"; //Buscamos algun id con codigo repetido
+    $sql = "SELECT id FROM productos WHERE codigo = '$codigo' 
+            AND status = '1' AND eliminado ='0';"; //Buscamos algun id con codigo repetido
 
     $res = $con->query($sql); //ejecuta una consulta en la conexion
 

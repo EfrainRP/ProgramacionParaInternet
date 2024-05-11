@@ -61,7 +61,7 @@
 
                     <div class='data'> 
                         <div id='etiqueta'>Costo: </div>
-                        <div id='info'>$costo</div>
+                        <div id='info'>$$costo</div>
                     </div>
 
                     <div class='data'> 

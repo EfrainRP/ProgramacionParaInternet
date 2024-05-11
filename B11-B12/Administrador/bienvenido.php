@@ -9,5 +9,5 @@
     </head>
     <body>
         <?php include('menu.php'); ?>
-        <br><h1>Bienvenido <?php echo $_SESSION['nombreUser']; ?> al Sistema de Administración.</h1>
+        <br><h1>Bienvenido <?php echo $nombreSession; ?> al Sistema de Administración.</h1>
     </body>

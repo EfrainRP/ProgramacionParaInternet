@@ -9,7 +9,8 @@
     $pass =$_REQUEST['pass'];
     $passEnc = md5($pass); //Encripta la contraseña
 
-    $sql = "SELECT * FROM empleados WHERE correo = '$correo' AND pass = '$passEnc' AND status = 1 AND eliminado = 0;"; //Consulta de un correo y pass identico a lo recibido
+    $sql = "SELECT * FROM empleados WHERE correo = '$correo' AND pass = '$passEnc' 
+            AND status = 1 AND eliminado = 0;"; //Consulta de un correo y pass identico a lo recibido
     
     $res = $con->query($sql); //ejecuta una consulta en la conexion
 

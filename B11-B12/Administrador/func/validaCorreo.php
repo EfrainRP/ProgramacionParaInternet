@@ -5,7 +5,8 @@
     //Recibe variable
     $correo =$_REQUEST['correo'];
 
-    $sql = "SELECT id FROM empleados WHERE correo = '$correo';"; //Buscamos algun id con correo repetido
+    $sql = "SELECT id FROM empleados WHERE correo = '$correo'
+        	AND status = '1' AND eliminado ='0';"; //Buscamos algun id con correo repetido
 
     $res = $con->query($sql); //ejecuta una consulta en la conexion
 
