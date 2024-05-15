@@ -1,0 +1,67 @@
+body{
+    background: linear-gradient(-145deg,#2d82e9,#e78953); /*Ajusta el degradado de los colores*/
+    font-size: 14px;
+    width: 99%;
+}
+#contenedor{
+    margin:auto;
+    padding: 1em;
+    text-align: center;
+    width:25vw;
+    min-width: 300px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.38); /*Le da una sobra al objeto*/
+    border-radius: 1.5em;/*Redondea el ojeto*/
+    border: 6px outset black;
+    background-color: gainsboro;
+    font-size: 1.5em;
+}
+#contenedor .data{
+    display: flex;
+    margin: 2% 0;
+    padding: 1% 0;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    /* font-size: 1.5em; */
+}
+#contenedor #etiqueta{
+    color:#767676;
+    /* font-size: 1vw; vw permite ajustar el texto conforme el tamaño de la ventana */
+    width: 44%;
+    text-align: right;
+}
+#contenedor #info{
+    /* font-size: 1vw; */
+    border: 1px black;
+    width: 56%;
+    text-align: left;
+    justify-self: left;
+    padding-left: 2%;
+}
+#contenedor .data #imagen{
+    width: 50%;
+    margin: auto;
+}
+#contenedor .opciones#regresar{
+    /* font-size: 1.1vw; */
+    color:#000000;
+    border: 3px outset black;
+    background-color: #9406f2c5;
+    padding:0.1em 0.5em;
+    text-decoration: none; 
+    border-radius: 0.25em;
+    margin: 20px;
+}
+
+h1{
+    text-align: center;
+    /* font-size: 1.5vw;vw permite ajustar el texto conforme el tamaño de la ventana */
+}
+
+#contenedor #regresar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: #00ff1e;
+}
+/*Se aplica atributo cuando se da click al elemento*/
+#contenedor #regresar:active{
+    background-color: #ff8800;
+}
