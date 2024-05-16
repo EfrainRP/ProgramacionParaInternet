@@ -11,7 +11,6 @@ body{
 }
 a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
-    border-radius: 0.45em;/*Redondea el ojeto*/
     color:black;
 }
 footer{
@@ -68,5 +67,13 @@ h1{
 }
 #Forma01 #regresar:active, #Forma01 #enviar:active{
     background-color: var(--redPalette-color);
+}
+
+#Forma01 #mensaje{
+    padding: 2%;
+    font-size: 1.2em;
+    color:#ff0000;
+    border: 3px dashed#e97979;
+    margin: 2%;
 }
 

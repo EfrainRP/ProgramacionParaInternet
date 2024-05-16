@@ -11,7 +11,6 @@ body{
 }
 a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
-    border-radius: 0.45em;/*Redondea el ojeto*/
     color:black;
 }
 .banner{
@@ -28,10 +27,11 @@ a{
 }
 .productos{
     display:grid;
-    grid-template-columns: repeat(3,33.333%);
+    grid-template-columns: repeat(3,auto);
+    padding: 1% 8%;
     height: auto;
     margin: auto;
-    width: 75%;
+    width: 55%;
     grid-gap: 0.8%;
 }
 .productos [id^='producto']{
@@ -51,12 +51,14 @@ a{
 }
 [id^='producto'] div, [id^='producto'] a{
     margin: 0.6%;
+    border-radius: 0.45em;
 }
-[id^='producto'] #imagen{
-    max-width: 33%;
+[id^='producto'] .imagen{
+    max-width: 75%;
     height: auto;
     margin-bottom: 2.5%;
     border-radius: 0.35em; /* Redondea el ojeto */
+    text-align: center;
 }
 .paginacion{
     margin-top: 2%;
@@ -68,15 +70,25 @@ a{
     background-color: var(--bluePalette-color);
     /* border-radius: 0.45em;Redondea el ojeto */
 }
-#detalles, #agregar{
+#nombre{
+    color: #013d71;
+}
+#agregar{
     background-color: var(--bluePalette-color);
-    color:#000000;
+    color:var(--whitePalette-color);
     padding:1%;
 }
-#detalles:hover, #agregar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+#nombre:hover{
+    color:var(--mainPalette-color);
+}
+#agregar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: var(--mainPalette-color);
 }
-#detalles:active, #agregar:active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+#nombre:active{
+    color: var(--redPalette-color);
+}
+
+#agregar:active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: var(--redPalette-color);
 }
 footer{

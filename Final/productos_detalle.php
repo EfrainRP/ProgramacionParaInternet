@@ -54,9 +54,7 @@
             if ($num = $res->num_rows > 0) {
                 $productos = $res->fetch_all(MYSQLI_ASSOC);//Tiene todas las filas de la consulta en forma de matriz
                 $totalProductos = count($productos);
-            } else {
-                echo "No hay productos disponibles.";
-            }
+
             echo '<div id="similares">Otros productos similares: </div>';
             echo '<div class="productos">';
             foreach($productos as $producto) {
@@ -71,6 +69,7 @@
                     </div>";
             }
             echo '</div>';
+            } 
         ?>
         <footer>
             <a href="./index.php">EfraTronic.com </a>| 
@@ -79,3 +78,4 @@
             <a href="./terminos.php">Terminos y condiciones </a>
         </footer>
     </body>
+</html>

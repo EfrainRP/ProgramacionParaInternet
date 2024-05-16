@@ -11,25 +11,14 @@ body{
 }
 a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
-    border-radius: 0.45em;/*Redondea el ojeto*/
     color: black;
 }
 #carrito{
-    border: 1px solid black;
     margin: auto auto 2% auto;
     width: 80%;
     font-size: 1.5em;
     font-family: 'Segoe UI';
     place-content: center;
-    border-radius: 0.7em; /* Redondea el ojeto */
-    box-shadow: 0 0 20px var(--greyPalette-color); /*Le da una sobra al objeto*/
-
-}
-#carrito {
-    border-radius: 1em; /* Redondea el ojeto */
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0 0 50px var(--bluePalette-color); /*Le da una sobra al objeto*/
 }
 
 a#agregar, a#detalles, a#regresar{
@@ -71,6 +60,7 @@ a#agregar, a#detalles, a#regresar{
 }
 [id^='producto'] div, [id^='producto'] a{
     margin: 0.6%;
+    border-radius: 0.45em;
 }
 [id^='producto'] #imagen{
     max-width: 33%;

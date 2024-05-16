@@ -6,12 +6,11 @@
     --greyPalette-color: #999999;
 }
 body{
-    background: linear-gradient(-120deg,var(--whitePalette-color),var(--greyPalette-color)); /*Ajusta el degradado de los colores*/
+    background: linear-gradient(180deg,var(--whitePalette-color),var(--mainPalette-color)); /*Ajusta el degradado de los colores*/
     font-size: 14px;
 }
 a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
-    border-radius: 0.45em;/*Redondea el ojeto*/
     color: black;
 }
 #data{
@@ -55,8 +54,9 @@ a{
     margin-right: 10%;
 }
 a#agregar, a#detalles, a#regresar{
+    border-radius: 0.45em;
     background-color: var(--bluePalette-color);
-    color:#000000;
+    color:var(--whitePalette-color);
     padding:1%;
     text-align: center;
 }

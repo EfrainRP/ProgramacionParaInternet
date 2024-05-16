@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require "./Administrador/func/conecta.php"; //Conexion y verificacion de la base de datos
     $con = conecta();//conecta y verifica si se hizo bien
 ?>
@@ -18,19 +17,19 @@
         </header>
         <h2>Carrito 1/2</h2>
         <?php
-            // $id_cliente = $_SESSION['idUsuario'];
-            // $sql = "SELECT id FROM pedidos WHERE id_usuario = $id_cliente AND status = 0";
-            // $res = $con->query($sql); //ejecuta una consulta en la conexion
+                if($idSession != null){
+                $sql = "SELECT id FROM pedidos WHERE id_usuario = $idSession AND status = 0";
+                $res = $con->query($sql); //ejecuta una consulta en la conexion
             
-            // if ($num = $res->num_rows > 0) {
-            //     $row = $res->fetch_array();
-            //     $id_pedido= $row['id'];
+                if ($num = $res->num_rows > 0) {
+                    $row = $res->fetch_array();
+                    $id_pedido= $row['id'];
 
-            //     $query = "SELECT * FROM pedidos_productos WHERE id_pedido = $id_pedido";
-            //     $res = $con->query($sql); //ejecuta una consulta en la conexion
-            //     $num = $res->num_rows;
+                    $query = "SELECT * FROM pedidos_productos WHERE id_pedido = $id_pedido";
+                    $res = $con->query($sql); //ejecuta una consulta en la conexion
+                    $num = $res->num_rows;
                     $pedidos = $res->fetch_all(MYSQLI_ASSOC);//Tiene todas las filas de la consulta en forma de matriz
-            //     $totalPrecioFinal = 0;
+                    $totalPrecioFinal = 0;
 
                 echo '<table id="carrito">
                 <tr>
@@ -48,9 +47,12 @@
                 
                 </table>';
 
-            // } else {
-            //     echo "No hay productos disponibles.";
-            // }
+            } else {
+                echo "No hay productos disponibles.";
+            }
+        }else{
+            // header("Location: ./index.php");
+        }
         ?>
         <footer>
             <a href="./index.php">EfraTronic.com </a>| 

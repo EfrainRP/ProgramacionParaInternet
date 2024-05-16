@@ -23,7 +23,7 @@
                     setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
                 }else{  // Si estan llenos los campos
                     $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                        url: './func/validaUsuario.php', //
+                        url: './func/empleados_validaUsuario.php', //
                         type:'post', 
                         dataType:'text',
                         data:'correo='+correo+'&pass='+pass,

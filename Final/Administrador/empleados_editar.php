@@ -33,7 +33,7 @@
                 var correo = $('#correo').val(); //Obtenemos el valor del correo del formulario
                 if(correo){
                     $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                            url: './empleados_validaCorreo.php', //
+                            url: './func/empleados_validaCorreo.php', 
                             type:'post', 
                             dataType:'text',
                             data:'correo='+correo,

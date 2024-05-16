@@ -1,16 +1,14 @@
 #menu{
     width: 100%;
     display:flex;
-    align-items:start;
-    justify-content:left;
 }
-#menu a:not(#logo){
+#menu a:not(#logo), #menu div{
     background-color: var(--bluePalette-color);
-    padding: 0.1% 0%;
-    margin: 0.1%;
+    padding: 1% 0%;
+    margin-bottom: 1%;
     text-align: center;
-    border: 1px solid #000000;
-    border-radius: 0.45em;/*Redondea el ojeto*/
+    /* border: 1px solid #000000;
+    border-radius: 0.45em;Redondea el ojeto */
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     font-size: 1.4em; /*se multiplica el valor padre de letra por 1.2em*/
     color:white;
@@ -20,10 +18,10 @@
     background-color: var(--greyPalette-color);
 }
 #menu a:not(#logo):active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
-    background-color: #b4e1cb;
+    background-color: var(--redPalette-color);
 }
 #menu #logo{
-    width: 9%;
+    width: 5.6%;
     text-align: left;
 }
 #menu #logo img{

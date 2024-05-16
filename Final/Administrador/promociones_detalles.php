@@ -14,6 +14,10 @@
             #contenedor #etiqueta, #contenedor #info{
                 width: 50%;
             }
+            #contenedor .data #imagen{
+                width: 100%;
+                margin: auto;
+            }
         </style>
     </head>
 

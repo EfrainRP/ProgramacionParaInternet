@@ -11,8 +11,8 @@
         <title>Detalles de pedido</title>
         <link href="./css/style_details.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
         <style>
-            #contenedor #etiqueta, #contenedor #info{
-                width: 50%;
+            #contenedor{
+                width: 90%;
             }
         </style>
     </head>
@@ -23,44 +23,48 @@
         <div id="contenedor">
             <h1>Detalles de pedido</h1>
             <?php
-                $sql = "SELECT * FROM pedidos
-                WHERE id = $id AND status = 1";
+                $sql = "SELECT * FROM pedidos_productos WHERE id_pedido = $id_pedido;";
     
                 $res = $con->query($sql); //ejecuta una consulta en la conexion
-            
+                $totalPrecioFinal = 0;
+
+                echo '<table>   
+                        <tr>            
+                            <th>Nombre del Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                            <th>Precio Total</th>
+                        </tr> ';
                 // Verificar la consulta echa
                 if ($row = $res->fetch_array()) {
                     //cantidad de productos, el costo, el subtotal y el gran total del pedido.
-                    $stock = $row["stock"];
-                    $costo = $row["costo"];
-                    $subtotal = $row["subtotal"];
-                    $total = $row["total"];
+                    $idproducto = $row['id_producto'];
+                    $cantidad = $row['cantidad'];
+                    $precio = $row['precio'];
                     
-                    echo "
+                    $sql2 = "SELECT * FROM productos WHERE id = $idproducto;";
+                    $res = $con->query($sql); //ejecuta una consulta en la conexion
+                    $producto = $res->fetch_array();
                     
-                    <div class='data'> 
-                        <div id='etiqueta'>Stock: </div>
-                        <div id='info'>$stock</div>
-                    </div>
+                    $nombreProducto = $producto['nombre'];
 
-                    <div class='data'> 
-                        <div id='etiqueta'>Costo: </div>
-                        <div id='info'>$costo</div>
-                    </div>
-                    
-                    <div class='data'> 
-                        <div id='etiqueta'>Subtotal: </div>
-                        <div id='info'>$$subtotal</div>
-                    </div>
+                    $precioTotal = $cantidad * $precio;
 
-                    <div class='data'> 
-                        <div id='etiqueta'>Total: </div>
-                        <div id='info'>$$total</div>
-                    </div>
-                    </div>";
-                } else {
-                    echo "No se encontraron resultados para la ID deseado";
+                    $totalPrecioFinal += $precioTotal;
+
+                    echo '<tr>
+                            <td>' . $nombreProducto . '</td>
+                            <td>' . $cantidad . '</td>
+                            <td>' . $precio . '</td>
+                            <td>' . $precioTotal . '</td>
+                        </tr>';
                 }
+
+                echo '<tr>
+                        <td colspan="3" class="total">Total:</td>
+                        <td>' . $totalPrecioFinal . '</td>
+                    </tr>';
+                echo '</table>';
             ?>
             <br>
             <a class="opciones" id="regresar" href="./pedidos_lista.php">Regresar al listado</a> <br><br>            

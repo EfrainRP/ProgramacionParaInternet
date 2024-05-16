@@ -34,10 +34,9 @@
                     // Mostreo de datos de los productos
                     echo "
                         <div id='producto".$productos[$i]['id']."'>
-                            <img id='imagen' src='./Administrador/archivos/".$productos[$i]['archivo']."'>
-                            <div id='nombre'><b>".$productos[$i]['nombre']."</b></div>
+                        <a class='imagen' href='./productos_detalle.php?id=".$productos[$i]['id']."'><img class='imagen' src='./Administrador/archivos/".$productos[$i]['archivo']."'></a>
+                        <a id='nombre' href='./productos_detalle.php?id=".$productos[$i]['id']."'><b>".$productos[$i]['nombre']."</b></a>
                             <div id='costo'>$".number_format($productos[$i]['costo'])."</div>
-                            <a id='detalles' href='./productos_detalle.php?id=".$productos[$i]['id']."'>Detalles</a>
                             <a id='agregar' href='#'>Agregar <b>(".$productos[$i]['stock'].")</b></a>
                             </div>
                         ";

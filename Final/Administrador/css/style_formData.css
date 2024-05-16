@@ -56,14 +56,14 @@ h1{
     font-size: 1.7em;
     color:#000000;
     border: 3px outset black;
-    background-color: #a221f9;
+    background-color: #f85b78;
     padding:0em 0.5em;
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     width: 5em;
 
 }
 #Forma01 #enviar{
-    font-size: 1.5em;
+    font-size: 1.55em;
     color:#000000;
     border: 3px outset black;
     background-color: #ff8800;
@@ -72,7 +72,7 @@ h1{
 }
 
 #Forma01 #regresar:hover{
-    background-color: #c57ef4;
+    background-color: #f58fa1;
 }
 
 #Forma01 #enviar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
@@ -85,4 +85,3 @@ h1{
 /* #enviar:active,#Forma01 #regresar:active{
     background-color: #ff8800;
 } */
-

@@ -34,7 +34,7 @@
                 var codigo = $('#codigo').val(); //Obtenemos el valor del codigo del formulario
                 if(codigo){
                     $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                            url: './func/validaCodigo.php', //
+                            url: './func/productos_validaCodigo.php', //
                             type:'post', 
                             dataType:'text',
                             data:'codigo='+codigo,

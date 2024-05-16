@@ -29,31 +29,6 @@
                     document.Forma01.submit(); //Se ejecuta el envio de los datos al archivo promociones_salva.php
                 }
             }
-            function validarCorreo(){
-                var id = $('#id').val(); //Obtenemos el valor del id del formulario
-                var correo = $('#correo').val(); //Obtenemos el valor del correo del formulario
-                if(correo){
-                    $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                            url: './promociones_validaCorreo.php', //
-                            type:'post', 
-                            dataType:'text',
-                            data:'correo='+correo,
-                            success:function(res){
-                                console.log('res: '+res);
-                                if(res == 0 ){//Si regresa un 0, correo no repetido
-                                    console.log('Correo no repetido');
-                                }else if (res != id){ //Si es diferente el id a editar con el id recibido de la consulta sql,-> id repetido
-                                    $('#correo').val('');//Vacia el valor del input correo
-                                    $('#mensajeCorreo').show();//Muestra el contenedor
-                                    $('#mensajeCorreo').html('El correo <u>'+correo+'</u> ya existe.'); //Escribe el mensaje en el contenedor
-                                    setTimeout("$('#mensajeCorreo').html(''); $('#mensajeCorreo').hide();", 5000);//Ejecuta esas funciones para el contenedor
-                                }
-                            },error:function(){
-                                alert('Error archivo no encontrado...');
-                            }
-                        });
-                }
-            }
         </script>
     </head>
 
