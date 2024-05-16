@@ -1,0 +1,85 @@
+:root{
+    --mainPalette-color: #c6d5e3;
+    --redPalette-color: #a92626;
+    --bluePalette-color: #5d84a7;
+    --whitePalette-color: #ffffff;
+    --greyPalette-color: #999999;
+}
+body{
+    background: linear-gradient(-145deg,var(--mainPalette-color),var(--whitePalette-color)); /*Ajusta el degradado de los colores*/
+    font-size: 14px;
+}
+a{
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    border-radius: 0.45em;/*Redondea el ojeto*/
+    color:black;
+}
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+    
+}
+.banner img{
+    width: 600px;
+    height: 200px;
+    border-radius: 0.5em; /* Redondea el ojeto */
+}
+.productos{
+    display:grid;
+    grid-template-columns: repeat(3,33.333%);
+    height: auto;
+    margin: auto;
+    width: 75%;
+    grid-gap: 0.8%;
+}
+.productos [id^='producto']{
+    display: flex; /* Usa flexbox para alinear elementos */
+    flex-direction: column; /* Acomoda los elementos en una columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: auto;
+    padding: 0 5%;
+    min-height: 300px;
+    font-size: 1.4em;
+    font-family: Arial;
+    background-color: var(--greyPalette-color);
+    min-width:min-content;
+    border-radius: 2em;/*Redondea el ojeto*/
+    box-shadow: 0 0 10px #00000061; /*Le da una sobra al objeto*/
+}
+[id^='producto'] div, [id^='producto'] a{
+    margin: 0.6%;
+}
+[id^='producto'] #imagen{
+    max-width: 33%;
+    height: auto;
+    margin-bottom: 2.5%;
+    border-radius: 0.35em; /* Redondea el ojeto */
+}
+.paginacion{
+    margin-top: 2%;
+    text-align: center;
+}
+.paginacion [id^='pagina']{
+    margin: 0.5;
+    padding: 0.5%;
+    background-color: var(--bluePalette-color);
+    /* border-radius: 0.45em;Redondea el ojeto */
+}
+#detalles, #agregar{
+    background-color: var(--bluePalette-color);
+    color:#000000;
+    padding:1%;
+}
+#detalles:hover, #agregar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: var(--mainPalette-color);
+}
+#detalles:active, #agregar:active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: var(--redPalette-color);
+}
+footer{
+    text-align: center;
+    margin-top: 5%;
+}

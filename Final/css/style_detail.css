@@ -1,0 +1,118 @@
+:root{
+    --mainPalette-color: #a7c8e6;
+    --redPalette-color: #a92626;
+    --bluePalette-color: #5d84a7;
+    --whitePalette-color: #ffffff;
+    --greyPalette-color: #999999;
+}
+body{
+    background: linear-gradient(-120deg,var(--whitePalette-color),var(--greyPalette-color)); /*Ajusta el degradado de los colores*/
+    font-size: 14px;
+}
+a{
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    border-radius: 0.45em;/*Redondea el ojeto*/
+    color: black;
+}
+#data{
+    display:grid;
+    grid-template-columns: 35% 40% 25%;
+    grid-template-rows: repeat(7,auto);
+    height: auto;
+    margin: auto auto 2% auto;
+    width: 75%;
+    font-size: 160%;
+    font-family: 'Segoe UI';
+    place-content: center;
+}
+#data #imagen{
+    grid-column: 1;
+    grid-row: 1 / 8;
+    border-radius: 1em; /* Redondea el ojeto */
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 50px var(--bluePalette-color); /*Le da una sobra al objeto*/
+}
+#data #nombre{
+    font-size: 1.75em;
+    grid-column: 2;
+    grid-row: 2;
+}
+#data #costo{
+    grid-column: 2;
+    grid-row: 3;
+}
+#data #codigo{
+    grid-column: 2;
+    grid-row: 4;
+}
+#data #stock{
+    grid-column: 2;
+    grid-row: 5;
+}
+#data *:not(#imagen){
+    margin-left: 10%;
+    margin-right: 10%;
+}
+a#agregar, a#detalles, a#regresar{
+    background-color: var(--bluePalette-color);
+    color:#000000;
+    padding:1%;
+    text-align: center;
+}
+#data #agregar{
+    grid-column: 2;
+    grid-row: 7;
+}
+#data #regresar{
+    grid-column: 3;
+    grid-row: 1; 
+}
+.productos{
+    display:grid;
+    grid-template-columns: repeat(3,33.333%);
+    height: auto;
+    margin: auto;
+    width: 65%;
+    grid-gap: 0.3%;
+}
+.productos [id^='producto']{
+    display: flex; /* Usa flexbox para alinear elementos */
+    flex-direction: column; /* Acomoda los elementos en una columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: auto 2%;
+    padding: auto;
+    min-height: 270px;
+    font-size: 1.4em;
+    font-family: Arial;
+    background-color: var(--greyPalette-color);
+    min-width:min-content;
+    border-radius: 2em;/*Redondea el ojeto*/
+    box-shadow: 0 0 10px #00000061; /*Le da una sobra al objeto*/
+}
+[id^='producto'] div, [id^='producto'] a{
+    margin: 0.6%;
+}
+[id^='producto'] #imagen{
+    max-width: 33%;
+    height: auto;
+    margin-bottom: 2.5%;
+    border-radius: 0.35em; /* Redondea el ojeto */
+}
+#similares{
+    font-size: 150%;
+    margin: 3% 14% 1% 19%;
+    text-align: justify;
+}
+footer{
+    text-align: center;
+    margin-top: 5%;
+}
+
+a#agregar:hover, a#detalles:hover, a#regresar:hover{
+    background-color: var(--mainPalette-color);
+}
+a#agregar:active, a#detalles:active, a#regresar:active{
+    background-color: var(--redPalette-color);
+}

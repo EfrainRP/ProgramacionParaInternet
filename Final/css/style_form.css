@@ -1,0 +1,72 @@
+:root{
+    --mainPalette-color: #c6d5e3;
+    --redPalette-color: #a92626;
+    --bluePalette-color: #5d84a7;
+    --whitePalette-color: #ffffff;
+    --greyPalette-color: #999999;
+}
+body{
+    background: linear-gradient(-145deg,var(--mainPalette-color),var(--whitePalette-color)); /*Ajusta el degradado de los colores*/
+    font-size: 14px;
+}
+a{
+    text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    border-radius: 0.45em;/*Redondea el ojeto*/
+    color:black;
+}
+footer{
+    text-align: center;
+    margin-top: 9%;
+}
+#Forma01{
+    margin:auto;
+    padding: 1em;
+    text-align: center;
+    width:30%;
+    min-width: 450px;
+    box-shadow: 0 0 50px #00000061; /*Le da una sobra al objeto*/
+    background-color: gainsboro;
+    border-radius: 1.5em;/*Redondea el ojeto*/
+    border: 6px outset black;
+}
+#Forma01 input, #Forma01 textarea{
+    font-family: 'Segoe UI';
+    font-size: 1.2em;
+    border: none;
+    border-radius: 0.25em;/*Redondea el ojeto*/
+    width: 90%;
+    margin: 1.6% 0 2.5% 0;
+}
+#Forma01 label{
+    color:#767676;
+    font-size: 1.2em;
+    display: block;
+    padding: 1.4% 0 0 1.4%;
+    width: 100%;
+    text-align: left;
+    margin-left: 5%;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 3.5%;
+    font-family: 'Segoe UI';
+    font-size: 2.2em;
+}
+
+#Forma01 #enviar{
+    font-size: 1.5em;
+    color:#000000;
+    border: 3px outset black;
+    background-color: var(--bluePalette-color);
+    padding: 0.05em 0.1em;
+    width: 4em;
+}
+
+#Forma01 #enviar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+    background-color: var(--mainPalette-color);
+}
+#Forma01 #regresar:active, #Forma01 #enviar:active{
+    background-color: var(--redPalette-color);
+}
+
