@@ -1,6 +1,3 @@
-<?php 
-    require "./func/session.php"; // Verifica que se inicio sesion
-?>
 <html>
     <head>
         <title>Alta de cliente</title>

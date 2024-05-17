@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2024 a las 21:57:06
+-- Tiempo de generación: 17-05-2024 a las 08:32:20
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `d02`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(128) NOT NULL,
+  `correo` varchar(128) NOT NULL,
+  `pass` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `correo`, `pass`) VALUES
+(1, 'Efrain', 'efrain.robles@gmail.com', '902e756b0329c9f938111643ae5f1425'),
+(2, 'marco', 'marco@mail.com', 'f5888d0bb58d611107e11f7cbc41c97a'),
+(3, 'mariana', 'mariana@mail.com', 'e60408e9a55027070e3caf0550d2b4df'),
+(4, 'miguel', 'miguel@mail.com', '9eb0c9605dc81a68731f61b3e0838937');
 
 -- --------------------------------------------------------
 
@@ -58,6 +81,33 @@ INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `correo`, `pass`, `rol`, `
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `id` int(11) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos_productos`
+--
+
+CREATE TABLE `pedidos_productos` (
+  `id` int(11) NOT NULL,
+  `id_pedido` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `productos`
 --
 
@@ -80,7 +130,9 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`id`, `nombre`, `codigo`, `descripcion`, `costo`, `stock`, `archivo_n`, `archivo`, `status`, `eliminado`) VALUES
 (1, 'Iphone 12', '123', 'celular', 13500, 3, 'iphone.jpg', 'a7a8b65af751b37d22608d5ccb214552.jpg', 1, 0),
-(2, 'Samsung', '1234', 'Celular samsung', 15000, 1, 'samsung.jpg', 'e1947a45f82c8b42cd671e530bc54507.jpg', 1, 0);
+(2, 'Samsung', '1234', 'Celular samsung', 15000, 1, 'samsung.jpg', 'e1947a45f82c8b42cd671e530bc54507.jpg', 1, 0),
+(3, 'xiomi', '12345', 'celular', 4567, 3, 'xiaomi.jpg', 'b7925ff42e233e032e256fe76bd1c3b6.jpg', 1, 0),
+(4, 'Tablet', '3477', 'tablet', 4595, 5, 'TB.webp', '01ed7727f53d5f05dc02d7604a3856d5.webp', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -101,16 +153,36 @@ CREATE TABLE `promociones` (
 --
 
 INSERT INTO `promociones` (`id`, `nombre`, `archivo`, `status`, `eliminado`) VALUES
-(1, '50%', '2ef3703e52088088c2d0eb8acfff38b8.jpg', 1, 0);
+(1, '50%', '2ef3703e52088088c2d0eb8acfff38b8.jpg', 1, 0),
+(2, 'Xbox', '8589e9e3041ab8e4c3bbb2ed921fb037.png', 1, 0),
+(3, 'Promocion', '3841ee0af7bd8472489a70b43c8d820f.png', 1, 0);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pedidos_productos`
+--
+ALTER TABLE `pedidos_productos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -130,22 +202,40 @@ ALTER TABLE `promociones`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pedidos_productos`
+--
+ALTER TABLE `pedidos_productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `promociones`
 --
 ALTER TABLE `promociones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

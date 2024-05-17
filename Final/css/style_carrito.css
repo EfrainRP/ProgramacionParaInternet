@@ -21,13 +21,13 @@ a{
     place-content: center;
 }
 
-a#agregar, a#detalles, a#regresar{
+a#comprar, a#detalles, a#regresar{
     background-color: var(--bluePalette-color);
     color:#000000;
     padding:1%;
     text-align: center;
 }
-#data #agregar{
+#data #comprar{
     grid-column: 2;
     grid-row: 7;
 }
@@ -78,9 +78,9 @@ footer{
     margin-top: 5%;
 }
 
-a#agregar:hover, a#detalles:hover, a#regresar:hover{
+a#comprar:hover, a#detalles:hover, a#regresar:hover{
     background-color: var(--mainPalette-color);
 }
-a#agregar:active, a#detalles:active, a#regresar:active{
+a#comprar:active, a#detalles:active, a#regresar:active{
     background-color: var(--redPalette-color);
 }

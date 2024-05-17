@@ -49,24 +49,42 @@ a{
     grid-column: 2;
     grid-row: 5;
 }
+#data #cantidad{
+    grid-column: 2;
+    grid-row: 6;
+}
+#data #cantidad input{
+    min-width: 10%;
+    width: 30%;
+    max-width: 50%;
+    height: 60%;
+    margin:0;
+    padding: 0%;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 0.35em;
+}
 #data *:not(#imagen){
     margin-left: 10%;
     margin-right: 10%;
 }
-a#agregar, a#detalles, a#regresar{
+a#comprar, a#regresar{
     border-radius: 0.45em;
     background-color: var(--bluePalette-color);
     color:var(--whitePalette-color);
-    padding:1%;
-    text-align: center;
+    margin: 5%;
+    text-align: center; /* Alineacion horizontal */
+    place-content: center; /* Alineacion vertical */
 }
-#data #agregar{
+#data #comprar{
     grid-column: 2;
     grid-row: 7;
+    width: 60%;
 }
 #data #regresar{
     grid-column: 3;
-    grid-row: 1; 
+    grid-row: 1;
+    width: 60%; 
 }
 .productos{
     display:grid;
@@ -80,7 +98,7 @@ a#agregar, a#detalles, a#regresar{
     display: flex; /* Usa flexbox para alinear elementos */
     flex-direction: column; /* Acomoda los elementos en una columna */
     justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
+    align-items: center; /* Centra horizontalmente */ 
     margin: auto 2%;
     padding: auto;
     min-height: 270px;
@@ -93,6 +111,8 @@ a#agregar, a#detalles, a#regresar{
 }
 [id^='producto'] div, [id^='producto'] a{
     margin: 0.6%;
+    padding: 0 4%;
+    text-align: center;
 }
 [id^='producto'] #imagen{
     max-width: 33%;
@@ -110,9 +130,9 @@ footer{
     margin-top: 5%;
 }
 
-a#agregar:hover, a#detalles:hover, a#regresar:hover{
+a#comprar:hover, a#regresar:hover{
     background-color: var(--mainPalette-color);
 }
-a#agregar:active, a#detalles:active, a#regresar:active{
+a#comprar:active, a#regresar:active{
     background-color: var(--redPalette-color);
 }

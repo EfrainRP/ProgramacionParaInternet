@@ -61,6 +61,7 @@
             <label for="pass">Contraseña:</label>
             <input type="password" name="pass" id="pass" placeholder="Escribe tu password "> <br><br>
             
+            <a class="opciones" id="regresar" href="../index.php">Regresar</a>
             <input class="opciones" id="enviar" type="submit" onclick="validarCampos(); return false;" value="Enviar"><br><br>
             
             <div id="mensaje"></div>

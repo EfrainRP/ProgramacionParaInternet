@@ -73,7 +73,7 @@ a{
 #nombre{
     color: #013d71;
 }
-#agregar{
+#comprar{
     background-color: var(--bluePalette-color);
     color:var(--whitePalette-color);
     padding:1%;
@@ -81,14 +81,16 @@ a{
 #nombre:hover{
     color:var(--mainPalette-color);
 }
-#agregar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+#comprar:hover{ /*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: var(--mainPalette-color);
 }
 #nombre:active{
     color: var(--redPalette-color);
 }
-
-#agregar:active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
+.paginacion a{
+    border-radius: .45em;
+}
+#comprar:active{ /*Se aplica atributo cuando el mouse pasa encima de el*/
     background-color: var(--redPalette-color);
 }
 footer{

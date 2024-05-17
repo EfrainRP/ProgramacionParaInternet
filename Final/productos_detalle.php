@@ -40,10 +40,13 @@
                     <span id='nombre'><b>$nombre</b></span>
                     <span id='costo'><b>Costo:</b> $".number_format($costo)."</span>
                     <span id='codigo'><b>Codigo:</b> $codigo</span>
-                    <span id='stock'><b>Cantidad:</b> $stock</span>
-                    <a id='agregar' href='#'><b>Agregar ()</b></a>
-                    <a id='regresar' href='./$url_anterior'><b>Regresar</b></a>
-                </div>";
+                    <span id='stock'><b>Stock:</b> $stock</span>";
+                    if (isset($idSession)) {
+                    echo "
+                        <div id='cantidad'><b>Cantidad:</b><input type='number' value='1' min='1' max='$stock' step='1' id='cantidad{$id}'></div>
+                        <a id='comprar' href='#'><b>Comprar</b></a>";
+                    }
+                    echo "<a id='regresar' href='./$url_anterior'><b>Regresar</b></a></div>";
             } else {
                 echo "No se encontraron resultados para la ID deseado";
             }
@@ -61,11 +64,10 @@
                 // Mostreo de datos de los productos
                 echo "
                     <div id='producto".$producto['id']."'>
-                        <img id='imagen' src='./Administrador/archivos/".$producto['archivo']."'>
+                        <a class='imagen' href='./productos_detalle.php?id=".$producto['id']."'><img id='imagen' src='./Administrador/archivos/".$producto['archivo']."'></a>
                         <div id='nombre'><b>".$producto['nombre']."</b></div>
                         <div id='costo'>$".number_format($producto['costo'])."</div>
-                        <a id='detalles' href='./productos_detalle.php?id=".$producto['id']."'>Detalles</a>
-                        <a id='agregar' href='#'>Agregar <b>(".$producto['stock'].")</b></a>
+                        <a id='comprar' href='./productos_detalle.php?id=".$producto['id']."'>Comprar</a>
                     </div>";
             }
             echo '</div>';

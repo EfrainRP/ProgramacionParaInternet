@@ -13,5 +13,6 @@
             VALUES ('$nombre','$correo','$passEnc');";
 
     $res = $con->query($sql); //ejecuta una consulta en la conexion
-    header("Location: ./../index.php");
+
+    header("Location: ./clientes_login.php");
 ?>
