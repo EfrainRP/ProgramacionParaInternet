@@ -4,7 +4,7 @@
     </head>
     <body>
     <nav id="menu">
-        <a class="menu" id="logo" href="./index.php.php"><img src="./img/logo-efratronic.jpeg"></a>
+        <a class="menu" id="logo" href="./index.php"><img src="./img/logo-efratronic.jpeg"></a>
         <a class="menu" id="home" href="./index.php">Home</a>
         <a class="menu" id="productos" href="./productos.php">Productos</a>
         <a class="menu" id="contacto" href="./contacto.php">Contacto</a>

@@ -25,27 +25,48 @@
                 $row = $res->fetch_array();
                 $id_pedido= $row['id'];
 
-                $query = "SELECT * FROM pedidos_productos WHERE id_pedido = $id_pedido";
+                $sql = "SELECT * FROM pedidos_productos WHERE id_pedido = $id_pedido";
                 $res = $con->query($sql); //ejecuta una consulta en la conexion
                 $num = $res->num_rows;
-                $pedidos = $res->fetch_all(MYSQLI_ASSOC);//Tiene todas las filas de la consulta en forma de matriz
-                $totalPrecioFinal = 0;
 
             echo '<table id="carrito">
             <tr>
                 <th scope="col">Producto</th>
-                <th scope="col">Costo</th>
                 <th scope="col">Cantidad</th>
+                <th scope="col">Costo unitario</th>
                 <th scope="col">Subtotal</th>
                 <th scope="col">Opcion</th>
-            </tr>
-            foreach($pedidos as $pedido){
+            </tr>';
+            $cont = 1;
+            $totalPrecioFinal = 0;
+            while($pedido = $res->fetch_assoc()){//Tiene todas las filas de la consulta en forma de matriz){
+                $sql = "SELECT nombre FROM productos WHERE id = ".$pedido["id_producto"];
+                $res = $con->query($sql); //ejecuta una consulta en la conexion
+                
+                if($num = $res->num_rows > 0) {//Validacion para obtener el nombre del producto
+                    $nombre_producto = $res->fetch_assoc();
+                    $nombreProducto = $nombre_producto["nombre"];
+                }else{
+                    $nombreProducto = 'Producto'.$cont;
+                }
+
+                //Impresion de datos en la tabla carrito
+                $subtotal = $pedido["precio"] * $pedido["cantidad"];
+                echo '
                 <tr>
-                    
-                </tr>
+                    <td><b>'.$nombreProducto.'</b></td>
+                    <td>'.$pedido["cantidad"].'</td>
+                    <td> $'.number_format($pedido["precio"]).'</td>
+                    <td>'.$subtotal.'</td>
+                    <td>
+                        <a id="eliminar" href="javascript:void(0);" onclick="eliminaAjax($id);">Eliminar</a>
+                    </td>
+                </tr>';
+                $cont++;
             }
             
-            </table>';
+            echo '</table>';
+            echo '<a id="confirmar" href="#";">Confirmar carrito</a>';
 
             } else {
                 echo "No hay productos disponibles.";

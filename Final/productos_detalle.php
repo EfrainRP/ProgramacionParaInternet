@@ -8,6 +8,41 @@
         <title>Detalle</title>
         <link href="./css/style_detail.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
         <script src='../jQuery/jquery-3.3.1.min.js'></script>
+        <script>
+            function agregarProducto(id_producto,stock) {
+                var cant = $('input#cantidadProducto').val();
+                console.log(cant);
+                if (cant > 0 && cant <= stock) {
+                    $.ajax({
+                    url      : './agregarProducto.php',
+                    type     : 'post',
+                    dataType : 'text',
+                    data     : 'id_producto='+id_producto+'&cant='+cant,
+                    success  : function(res) {
+                        console.log('res: '+res);
+                        if (res == 1) {
+                        $('#mensaje').show();
+                        $('#mensaje').html('Se ha agregado correctamente');
+                        $('#mensaje').css('color','var(--greyPalette-color)');
+                        $('#mensaje').css('border-color','var(--greyPalette-color)');
+                        setTimeout('$("#mensaje ").html(""); $("#mensaje").hide();', 5000);
+                        } else {
+                        $('#mensaje').show();
+                        $('#mensaje').html('Ingrese un valor valido');
+                        setTimeout('$("#mensaje").html(""); $("#mensaje").hide();', 5000);
+                        }
+
+                    },error: function() {
+                        alert('Error archivo no encontrado...');
+                    }
+                    });
+                }else{
+                    $('#mensaje').show();
+                    $('#mensaje').html('Ingrese un valor valido');
+                    setTimeout('$("#mensaje").html(""); $("#mensaje").hide();', 5000);
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -33,18 +68,27 @@
                     $arreglo = explode("/", $url_anteriorCompleto);
                     $len = count($arreglo);
                     $url_anterior = $arreglo[$len-1];//Sera index.php o productos.php
+                    if($url_anterior != 'index.php' || $url_anterior != 'produsctos.php'){
+                        $url_anterior = 'index.php';
+                    }
                 }
 
                 echo "<div id='data'>
                     <img id='imagen' src='./Administrador/archivos/$archivo'>
-                    <span id='nombre'><b>$nombre</b></span>
-                    <span id='costo'><b>Costo:</b> $".number_format($costo)."</span>
-                    <span id='codigo'><b>Codigo:</b> $codigo</span>
-                    <span id='stock'><b>Stock:</b> $stock</span>";
+                    <span id='nombre'><b id='label'>$nombre</b></span>
+                    <span id='costo'><b id='label'>Costo:</b>$".number_format($costo)."</span>
+                    <span id='codigo'><b id='label'>Codigo:</b>$codigo</span>
+                    <span id='stock'><b id='label'>Stock:</b>$stock</span>
+                    <p id='descripcion'><b id='label'>Descripcion:</b><br><br>$descripcion</p>";
                     if (isset($idSession)) {
                     echo "
-                        <div id='cantidad'><b>Cantidad:</b><input type='number' value='1' min='1' max='$stock' step='1' id='cantidad{$id}'></div>
-                        <a id='comprar' href='#'><b>Comprar</b></a>";
+                        <div id='cantidad'><b id='label'>Cantidad:</b>
+                            <input type='number' id='cantidadProducto' value='1' min='1' max='$stock' step='1'>
+                        </div>
+                        <div id='mensaje'></div>
+                        <script>$('#mensaje').hide();</script>
+                        <a id='añadirCarrito' onclick='agregarProducto($id,$stock)'><b>Añadir a carrito</b></a>
+                        <a id='comprar' href='./carrito1.php'><b>Ir a carrito</b></a>";
                     }
                     echo "<a id='regresar' href='./$url_anterior'><b>Regresar</b></a></div>";
             } else {

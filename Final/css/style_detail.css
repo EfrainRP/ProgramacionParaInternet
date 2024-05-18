@@ -16,13 +16,12 @@ a{
 #data{
     display:grid;
     grid-template-columns: 35% 40% 25%;
-    grid-template-rows: repeat(7,auto);
+    grid-template-rows: repeat(8,12.5%);
     height: auto;
-    margin: auto auto 2% auto;
+    margin: 2% auto;
     width: 75%;
     font-size: 160%;
     font-family: 'Segoe UI';
-    place-content: center;
 }
 #data #imagen{
     grid-column: 1;
@@ -64,27 +63,39 @@ a{
     font-size: 1em;
     border-radius: 0.35em;
 }
-#data *:not(#imagen){
-    margin-left: 10%;
-    margin-right: 10%;
-}
-a#comprar, a#regresar{
-    border-radius: 0.45em;
-    background-color: var(--bluePalette-color);
-    color:var(--whitePalette-color);
-    margin: 5%;
-    text-align: center; /* Alineacion horizontal */
-    place-content: center; /* Alineacion vertical */
+#data #añadirCarrito{
+    grid-column: 2;
+    grid-row: 8;
+    width: 40%;
+
 }
 #data #comprar{
-    grid-column: 2;
-    grid-row: 7;
+    grid-column: 3;
+    grid-row: 8;
     width: 60%;
 }
 #data #regresar{
     grid-column: 3;
     grid-row: 1;
     width: 60%; 
+}
+a#comprar, #añadirCarrito,a#regresar{
+    border-radius: 0.45em;
+    background-color: var(--bluePalette-color);
+    color:var(--whitePalette-color);
+    display:grid;
+    place-items: center;
+}
+#descripcion{
+    grid-column: 3;
+    grid-row: 2 / 8;
+    padding: 4% 2% 2% 2%;
+}
+#data *:not(#imagen):not(b){
+    margin: 1% 10%
+}
+#data #label{
+    margin-right: 6%;
 }
 .productos{
     display:grid;
@@ -115,7 +126,7 @@ a#comprar, a#regresar{
     text-align: center;
 }
 [id^='producto'] #imagen{
-    max-width: 33%;
+    max-width: 43%;
     height: auto;
     margin-bottom: 2.5%;
     border-radius: 0.35em; /* Redondea el ojeto */
@@ -130,9 +141,19 @@ footer{
     margin-top: 5%;
 }
 
-a#comprar:hover, a#regresar:hover{
+a#comprar:hover, a#regresar:hover, #añadirCarrito:hover{
     background-color: var(--mainPalette-color);
 }
-a#comprar:active, a#regresar:active{
+a#comprar:active, a#regresar:active, #añadirCarrito:active{
     background-color: var(--redPalette-color);
+}
+#data #mensaje{
+    padding: 1%;
+    font-size: 1em;
+    width: 60%;
+    color:#ff0000;
+    border: 3px dashed#e97979;
+    margin: 2% auto auto 15%;
+    grid-column: 2;
+    grid-row: 7;
 }

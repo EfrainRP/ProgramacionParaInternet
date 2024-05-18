@@ -51,7 +51,9 @@
                                 $('#mensaje').html('Datos no correctos :('); //Escribe el mensaje en el contenedor
                                 setTimeout("$('#mensaje').html(''); $('#mensaje').hide();", 5000);//Ejecuta esas funciones para el contenedor
                             }else{//Si es diferente a 0, lo encontro
-                                location.href ="./../index.php"; // Redirect para mostrar la sig. pagina
+                                let urlAnterior = document.referrer; //Obtenemos la direccion anterior, direccion absoluta 
+
+                                location.href =urlAnterior; // Redirect para mostrar la sig. pagina
                             }
                         },error:function(){
                             alert('Error archivo no encontrado...');
