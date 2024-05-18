@@ -9,78 +9,106 @@ body{
     background: linear-gradient(-190deg,var(--mainPalette-color),var(--greyPalette-color)); /*Ajusta el degradado de los colores*/
     font-size: 14px;
 }
+h1{
+    text-align: center;
+}
 a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     color: black;
 }
 #carrito{
-    margin: auto auto 2% auto;
-    width: 80%;
-    font-size: 1.5em;
+    border-collapse: collapse; 
+    width: 75%;
+    margin: 4% auto 1% auto; 
+    min-width: 450px; 
+    box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.15); 
+    font-size: 1.2em;
     font-family: 'Segoe UI';
-    place-content: center;
-}
-
-a#comprar, a#detalles, a#regresar{
-    background-color: var(--bluePalette-color);
-    color:#000000;
-    padding:1%;
-    text-align: center;
-}
-#data #comprar{
-    grid-column: 2;
-    grid-row: 7;
-}
-#data #regresar{
-    grid-column: 3;
-    grid-row: 1; 
-}
-.productos{
-    display:grid;
-    grid-template-columns: repeat(3,33.333%);
-    height: auto;
-    margin: auto;
-    width: 65%;
-    grid-gap: 0.3%;
-}
-.productos [id^='producto']{
-    display: flex; /* Usa flexbox para alinear elementos */
-    flex-direction: column; /* Acomoda los elementos en una columna */
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    margin: auto 2%;
-    padding: auto;
-    min-height: 270px;
-    font-size: 1.4em;
-    font-family: Arial;
-    background-color: var(--greyPalette-color);
-    min-width:min-content;
-    border-radius: 2em;/*Redondea el ojeto*/
-    box-shadow: 0 0 10px #00000061; /*Le da una sobra al objeto*/
-}
-[id^='producto'] div, [id^='producto'] a{
-    margin: 0.6%;
     border-radius: 0.45em;
 }
-[id^='producto'] #imagen{
-    max-width: 33%;
-    height: auto;
-    margin-bottom: 2.5%;
-    border-radius: 0.35em; /* Redondea el ojeto */
+#carrito thead tr, #carrito #total, #carrito #resTotal{ 
+    background-color: var(--greyPalette-color); 
+    color: var(--whitePalette-color); 
 }
-#similares{
-    font-size: 150%;
-    margin: 3% 14% 1% 19%;
-    text-align: justify;
+#carrito #imagen{ 
+    width: 10%;
+}
+#carrito img{ 
+    width: 100%;
+}
+#carrito #descripcion{ 
+    width: 25%;
+    max-width: 165px;
+    word-break: break-all;
+    text-align: left;
+}
+#carrito th, #carrito td { 
+    padding: 1% 2%; 
+    text-align: center;
+}
+#carrito tbody tr { 
+    border-bottom: 1px solid var(--greyPalette-color); 
+} 
+#carrito tbody tr:nth-of-type(even) { 
+    background-color: #bdbbbbb7; 
+} 
+#carrito tbody tr:last-of-type { 
+    border-bottom: 1px solid var(--greyPalette-color); 
+}
+#carrito #cantidadProducto{
+    padding: 0;
+}
+input[class^='cantidadProducto']{
+    width: 90%;
+    border-radius: 0.45em;
+    padding: 6%;
+    background-color: var(--whitePalette-color);
+}
+a#eliminar, a#continuar, a#regresar{
+    background-color: var(--bluePalette-color);
+    color:var(--whitePalette-color);
+    padding:1%;
+    text-align: center;
+    border-radius: 0.45em;
+    display:grid;
+    place-content: center;
+    font-size: 1.2em;
+    font-family: 'Segoe UI';
+}
+a#continuar{
+    width: 12%;
+    padding: 0.5%;
+}
+#btnContinuar{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 12%;
 }
 footer{
     text-align: center;
     margin-top: 5%;
 }
-
-a#comprar:hover, a#detalles:hover, a#regresar:hover{
+a#eliminar:hover, a#continuar:hover, a#continuar:hover{
     background-color: var(--mainPalette-color);
 }
-a#comprar:active, a#detalles:active, a#regresar:active{
+a#eliminar:active, a#continuar:active, a#continuar:active{
     background-color: var(--redPalette-color);
+}
+#divMensaje{
+    display: flex;
+    justify-content: flex-end;
+    margin: auto 12% 1% auto;
+    padding: 0.2%;
+}
+#mensaje{
+    padding: 1%;
+    font-size: 1.3em;
+    width: 20%;
+    padding: 1%;
+    color:#ff0000;
+    border: 3px dashed#e97979;
+    text-align: center;
+}
+#carga img{
+    height: 55%;
 }

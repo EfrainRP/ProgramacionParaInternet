@@ -1,3 +1,7 @@
+<?php
+    require "./Administrador/func/conecta.php"; //Conexion y verificacion de la base de datos
+    $con = conecta();//conecta y verifica si se hizo bien
+?>
 <html>
     <head>
         <title>Contacto</title>

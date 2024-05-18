@@ -8,6 +8,7 @@
         <title>Detalle</title>
         <link href="./css/style_detail.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
         <script src='../jQuery/jquery-3.3.1.min.js'></script>
+        <script src='./js/numCarrito.js'></script>
         <script>
             function agregarProducto(id_producto,stock) {
                 var cant = $('input#cantidadProducto').val();
@@ -21,15 +22,15 @@
                     success  : function(res) {
                         console.log('res: '+res);
                         if (res == 1) {
-                        $('#mensaje').show();
-                        $('#mensaje').html('Se ha agregado correctamente');
-                        $('#mensaje').css('color','var(--greyPalette-color)');
-                        $('#mensaje').css('border-color','var(--greyPalette-color)');
-                        setTimeout('$("#mensaje ").html(""); $("#mensaje").hide();', 5000);
+                            $('#mensaje').show();
+                            $('#mensaje').html('Se ha agregado correctamente');
+                            $('#mensaje').css('color','var(--greyPalette-color)');
+                            $('#mensaje').css('border-color','var(--greyPalette-color)');
+                            setTimeout('$("#mensaje ").html(""); $("#mensaje").hide();', 5000);
                         } else {
-                        $('#mensaje').show();
-                        $('#mensaje').html('Ingrese un valor valido');
-                        setTimeout('$("#mensaje").html(""); $("#mensaje").hide();', 5000);
+                            $('#mensaje').show();
+                            $('#mensaje').html('Ingrese un valor valido');
+                            setTimeout('$("#mensaje").html(""); $("#mensaje").hide();', 5000);
                         }
 
                     },error: function() {
@@ -87,7 +88,7 @@
                         </div>
                         <div id='mensaje'></div>
                         <script>$('#mensaje').hide();</script>
-                        <a id='añadirCarrito' onclick='agregarProducto($id,$stock)'><b>Añadir a carrito</b></a>
+                        <a id='añadirCarrito' onclick='agregarProducto($id,$stock); actualizarCarrito();'><b>Añadir a carrito</b></a>
                         <a id='comprar' href='./carrito1.php'><b>Ir a carrito</b></a>";
                     }
                     echo "<a id='regresar' href='./$url_anterior'><b>Regresar</b></a></div>";

@@ -16,7 +16,7 @@ a{
 #data{
     display:grid;
     grid-template-columns: 35% 40% 25%;
-    grid-template-rows: repeat(8,12.5%);
+    grid-template-rows: repeat(8,60px);
     height: auto;
     margin: 2% auto;
     width: 75%;
@@ -24,12 +24,15 @@ a{
     font-family: 'Segoe UI';
 }
 #data #imagen{
+    margin: auto;
     grid-column: 1;
     grid-row: 1 / 8;
     border-radius: 1em; /* Redondea el ojeto */
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     box-shadow: 0 0 50px var(--bluePalette-color); /*Le da una sobra al objeto*/
+
+    text-align: center;
 }
 #data #nombre{
     font-size: 1.75em;
@@ -85,11 +88,13 @@ a#comprar, #añadirCarrito,a#regresar{
     color:var(--whitePalette-color);
     display:grid;
     place-items: center;
+    text-align: center;
 }
 #descripcion{
     grid-column: 3;
     grid-row: 2 / 8;
     padding: 4% 2% 2% 2%;
+    font-size: 0.95em;
 }
 #data *:not(#imagen):not(b){
     margin: 1% 10%
@@ -149,7 +154,7 @@ a#comprar:active, a#regresar:active, #añadirCarrito:active{
 }
 #data #mensaje{
     padding: 1%;
-    font-size: 1em;
+    font-size: 0.85em;
     width: 60%;
     color:#ff0000;
     border: 3px dashed#e97979;

@@ -41,12 +41,13 @@ body{
 #contenedor .data #imagen{
     width: 50%;
     margin: auto;
+    border-radius: 0.65em;
 }
 #contenedor .opciones#regresar{
     /* font-size: 1.1vw; */
-    color:#000000;
+    color:#b0b0b0;
     border: 3px outset black;
-    background-color: #9406f2c5;
+    background-color: #f85b78;
     padding:0.1em 0.5em;
     text-decoration: none; 
     border-radius: 0.25em;

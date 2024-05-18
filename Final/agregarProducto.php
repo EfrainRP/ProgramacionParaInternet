@@ -1,5 +1,4 @@
 <?php
-    //agregarProducto.php
     session_start();
 
     require "./Administrador/func/conecta.php";

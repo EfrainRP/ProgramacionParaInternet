@@ -21,9 +21,11 @@ a{
     display: grid;
     grid-template-columns: repeat(8,12.5%);
 }
-.header div{
+.header{
     background-color: #ff5e00e3;
-    border: 2px solid #000000;
+    border-radius:0.75em;
+    margin:0 0 0.05% 0;
+    /* border: 2px solid #000000; */
 }
 .table .header div, .table div[class^='info'] div, .table div[class^='info'] a{
     display: flex; /*Contenedor flexible*/

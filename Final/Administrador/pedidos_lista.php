@@ -11,7 +11,7 @@
         <style>
             /* Se ajusta las columnas para esta tavla en particular */
             .table .header, .table div[class^='info']{ /*[class^='info'] selecciona la clase que empieza con 'info' */
-                grid-template-columns: repeat(4,auto);
+                grid-template-columns: repeat(5,20%);
             }
             .header #opciones{
                 grid-column: span 1;
@@ -40,7 +40,7 @@
                 <div id="id"><b>ID</b></div>
                 <div id="id_cliente"><b>ID Cliente</b></div>
                 <div id="status"><b>Status</b></div>
-                
+                <div id="fecha"><b>Fecha</b></div>
                 <div id="opciones"><b>Opcion</b></div>
             </div>
             <?php
@@ -48,7 +48,7 @@
                 como una matriz asociativa de la consulta*/
                 while($row = $res->fetch_array()){ 
                     $id = $row['id'];
-                    $id_cliente = $row['id_cliente'];
+                    $id_cliente = $row['id_usuario'];
                     $status = $row['status'];
                     $fecha = $row['fecha'];
 

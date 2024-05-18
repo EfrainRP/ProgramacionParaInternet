@@ -4,14 +4,13 @@
     align-items:start;
     justify-content: space-between;
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
+    background-color: #FCE181;
+    border-radius: 0.45em;/*Redondea el ojeto*/
+    margin: 0 auto auto 0.1%;
 }
 #menu a, #menu #bienvenido{
-    background-color: #FCE181;
     padding: 0.1% 0.01%;
-    margin: 0.1%;
     text-align: center;
-    border: 1px solid #000000;
-    border-radius: 0.45em;/*Redondea el ojeto*/
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     font-size: 1.2em; /*se multiplica el valor padre de letra por 1.2em*/
     color: black;
@@ -38,7 +37,7 @@
     width: 15%;
 }
 #menu #bienvenido{
-    background-color:#ece8ef;
+    background-color:#ea8f74;
     width: 28%;
 }
 #menu #cerrar{

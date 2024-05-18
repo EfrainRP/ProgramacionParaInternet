@@ -22,7 +22,7 @@
                 border-radius: 0.45em;/*Redondea el ojeto*/
             }
             .table {
-                font-size: 1.6em;
+                font-size: 1.3em;
             }
         </style>
 
