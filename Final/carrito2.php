@@ -91,7 +91,7 @@
                 <a id="continuar" onclick="cerrarPedido('.$id_pedido.')";">Finalizar</a>
                 </div>';
             } else {
-                echo "No hay productos en carrito.";
+                echo "<h2>No hay productos en carrito.</h2>";
             }
         }else{
             header("Location: ./index.php");

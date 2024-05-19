@@ -1,5 +1,5 @@
 <?php //Conexion y verificacion de la base de datos
-    require "./Administrador/func/conecta.php";
+    require "./../Administrador/func/conecta.php";
     $con = conecta();//conecta y verifica si se hizo bien
 
     $id = $_REQUEST['id'];// id de pedidos_productos

@@ -15,7 +15,7 @@
                 console.log(cant);
                 if (cant > 0 && cant <= stock) {
                     $.ajax({
-                    url      : './agregarProducto.php',
+                    url      : './func/agregar_producto.php',
                     type     : 'post',
                     dataType : 'text',
                     data     : 'id_producto='+id_producto+'&cant='+cant,
@@ -69,10 +69,10 @@
                     $arreglo = explode("/", $url_anteriorCompleto);
                     $len = count($arreglo);
                     $url_anterior = $arreglo[$len-1];//Sera index.php o productos.php
-                    if($url_anterior != 'index.php' || $url_anterior != 'produsctos.php'){
+                    if($url_anterior != 'productos.php' && $url_anterior != 'index.php'){
                         $url_anterior = 'index.php';
                     }
-                }
+                    }
 
                 echo "<div id='data'>
                     <img id='imagen' src='./Administrador/archivos/$archivo'>

@@ -18,7 +18,7 @@
                 $nombreSession = $_SESSION['nombreClient'];
                 $correoSession = $_SESSION['correoClient'];
                 echo '<div>Bienvenido '.$nombreSession.'</div>
-                    <a href="Administrador/func/destroy_session.php">Cerrar sesion</a>';
+                    <a href="./Administrador/func/destroy_session.php">Cerrar sesion</a>';
 
                 //Consultar id_pedido STATUS ABIERTO = 0
                 $sql = "SELECT id FROM pedidos WHERE id_usuario = $idSession AND status = 0";
@@ -34,8 +34,8 @@
                 }
             }else{
                 echo '
-                <a href="Administrador/clientes_login.php">Inicia sesion</a>
-                <a class="menu" id="carritoMenu" href="Administrador/clientes_login.php">Carrito(<span>0</span>)</a>';
+                <a href="./Administrador/clientes_login.php">Inicia sesion</a>
+                <a class="menu" id="carritoMenu" href="./Administrador/clientes_login.php">Carrito(<span>0</span>)</a>';
             }
         ?>
     </nav>

@@ -1,6 +1,6 @@
 function actualizarCarrito(){
     $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-        url: './cantidadCarrito.php',
+        url: './func/actualizar_cantidadCarrito.php',
         type:'post', 
         dataType:'text',
         data:'',

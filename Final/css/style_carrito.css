@@ -9,7 +9,7 @@ body{
     background: linear-gradient(-190deg,var(--mainPalette-color),var(--greyPalette-color)); /*Ajusta el degradado de los colores*/
     font-size: 14px;
 }
-h1{
+h1,h2{
     text-align: center;
 }
 a{

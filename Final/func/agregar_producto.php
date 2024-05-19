@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require "./Administrador/func/conecta.php";
+    require "./../Administrador/func/conecta.php";
     $con = conecta();//conecta y verifica si se hizo bien
 
     $idSession = $_SESSION['idClient']; //variable de session

@@ -1,5 +1,5 @@
 <?php //Conexion y verificacion de la base de datos
-    require "./conecta.php";
+    require "./../Administrador/func/conecta.php";
     $con = conecta();//conecta y verifica si se hizo bien
     
     //Recibe variable

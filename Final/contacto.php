@@ -18,26 +18,28 @@
                 $('#mensaje').html('Faltan campos por llenar');
                 setTimeout("$('#mensaje').html(''); $('#mensaje').hide();", 5000);
             } else {
-                $.ajax({
-                    url         : './contacto_enviar.php',
-                    type        : 'post',
-                    dataType    : 'text',
-                    data        : 'correo='+correo+'&nombre='+nombre+'&comentarios='+comentarios,
-                    success     : function(res) {
-                        console.log(res);
-                        if (res == 'success'){
-                            $('#mensaje').show();
-                            $('#mensaje').html('Gracias por ponerte en contacto!');
-                            setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
-                        } else {
-                            $('#mensaje').show();
-                            $('#mensaje').html('Error al enviar la solicitud');
-                            setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
-                        }
-                    },error: function() {
-                        alert ('Error archivo no encontrado...');
-                    }
-                });
+                document.Forma01.action = "./func/contacto_enviar.php";
+                document.Forma01.submit(); //Se ejecuta el envio de los datos al archivo empleados_salva.php
+                // $.ajax({
+                //     url         : './func/contacto_enviar.php',
+                //     type        : 'post',
+                //     dataType    : 'text',
+                //     data        : 'correo='+correo+'&nombre='+nombre+'&comentarios='+comentarios,
+                //     success     : function(res) {
+                //         console.log(res);
+                //         if (res == 'success'){
+                //             $('#mensaje').show();
+                //             $('#mensaje').html('Gracias por ponerte en contacto!');
+                //             setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
+                //         } else {
+                //             $('#mensaje').show();
+                //             $('#mensaje').html('Error al enviar la solicitud');
+                //             setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
+                //         }
+                //     },error: function() {
+                //         alert ('Error archivo no encontrado...');
+                //     }
+                // });
             }  
         }
         </script>

@@ -11,7 +11,7 @@
         <script>
             function eliminaAjax(id,idPedido){
                 $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                    url: './eliminaPedidos.php',
+                    url: './func/elimina_pedidos.php',
                     type:'post', 
                     dataType:'text',
                     data:'id='+id+'&id_pedido='+idPedido,
@@ -19,12 +19,9 @@
                         console.log(res);
                         if(res != -1){//Se elimina cuando el valor res del evento es 1
                             $('#fila'+id).hide(); //Esconde los elementos con id seleccionado
-                            // nuevoTotal = totalProductos-subtotal;
-                            // console.log('totalP '+ totalProductos);
-                            // console.log('sub '+ subtotal);
-                            // console.log('total '+ new Intl.NumberFormat('es-MX').format(nuevoTotal));
                             $('#resTotal').html('$'+new Intl.NumberFormat('es-MX').format(res)); //Actualiza el precio total
                             actualizarCarrito();
+                            validarTotal();
                         }else{
                             console.log('Error al eliminar');
                         }
@@ -33,27 +30,23 @@
                     }
                 });
             }
-
             function validarCantidad(idPedido,idProducto,stock,costo){
                 var cant = $('.cantidadProducto'+idProducto).val();
                 $.ajax({ //Metodo de js para ejecutar archivos de manera asincrona
-                    url: './Administrador/func/validaPedido.php',
+                    url: './func/valida_pedido.php',
                     type:'post', 
                     dataType:'text',
                     data:'id_producto='+idProducto+'&id_pedido='+idPedido+'&cantidad='+cant,
                     success:function(res){
                         console.log(res);
-                        
                         var arreglo = res.split("_");
                         var total = arreglo.at(-1);
-
                         var subtotal = 0;
                         if(arreglo[0] == -1){//El valor es < 0
                             $('.cantidadProducto'+idProducto).val(1);
                             $("#mensaje").show();
                             $('#mensaje').html('Cantidad/es no valido/s');
                             setTimeout('$("#mensaje").html(""); $("#mensaje").hide();', 5000);
-
                             subtotal = costo;
                             $('#subtotal'+idProducto).html('$'+new Intl.NumberFormat('es-MX').format(subtotal));
                         }else if(arreglo[0] == 0){ //El valor es > al stock
@@ -74,9 +67,16 @@
                     }
                 });
             }
+            function validarTotal(){
+                var total = $('#resTotal').html();
+                if(total != '$0'){ //Si se vacio el carrito, total tiene que ser diferente a $0
+                    window.location.href="./carrito2.php";
+                }else{
+                    $('#continuar').html("Carrito vacio");
+                }
+            }
         </script>
     </head>
-
     <body>
         <header>
             <?php 
@@ -151,11 +151,11 @@
             echo '  <div id="divMensaje"><div id="mensaje"></div></div>
                     <script>$("#mensaje").hide();</script>
                     <div id="btnContinuar">
-                        <a id="continuar"  href="./carrito2.php" >Continuar carrito</a>
+                        <a id="continuar"  onclick="validarTotal();">Continuar carrito</a>
                     </div>';
 
             } else {
-                echo "No hay productos en carrito.";
+                echo "<h2>No hay productos en carrito.</h2>";
             }
         }
         ?>
