@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2024 a las 08:32:20
+-- Tiempo de generación: 20-05-2024 a las 04:44:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -42,7 +42,9 @@ INSERT INTO `clientes` (`id`, `nombre`, `correo`, `pass`) VALUES
 (1, 'Efrain', 'efrain.robles@gmail.com', '902e756b0329c9f938111643ae5f1425'),
 (2, 'marco', 'marco@mail.com', 'f5888d0bb58d611107e11f7cbc41c97a'),
 (3, 'mariana', 'mariana@mail.com', 'e60408e9a55027070e3caf0550d2b4df'),
-(4, 'miguel', 'miguel@mail.com', '9eb0c9605dc81a68731f61b3e0838937');
+(4, 'miguel', 'miguel@mail.com', '9eb0c9605dc81a68731f61b3e0838937'),
+(5, 'Oliver', 'oliver@mail.com', 'acae273a5a5c88b46b36d65a25f5f435'),
+(6, 'Pepe', 'pepe@mail.com', '926e27eecdbc7a18858b3798ba99bddd');
 
 -- --------------------------------------------------------
 
@@ -91,6 +93,15 @@ CREATE TABLE `pedidos` (
   `status` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `fecha`, `id_usuario`, `status`) VALUES
+(1, '2024-05-19 20:01:10', 6, 1),
+(2, '2024-05-19 20:06:49', 5, 1),
+(3, '2024-05-19 20:07:53', 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +115,18 @@ CREATE TABLE `pedidos_productos` (
   `cantidad` int(11) NOT NULL,
   `precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pedidos_productos`
+--
+
+INSERT INTO `pedidos_productos` (`id`, `id_pedido`, `id_producto`, `cantidad`, `precio`) VALUES
+(1, 1, 4, 2, 4595),
+(2, 1, 5, 2, 10000),
+(3, 2, 3, 1, 4567),
+(4, 2, 2, 2, 15000),
+(5, 3, 2, 6, 15000),
+(6, 3, 1, 1, 13500);
 
 -- --------------------------------------------------------
 
@@ -129,10 +152,13 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `codigo`, `descripcion`, `costo`, `stock`, `archivo_n`, `archivo`, `status`, `eliminado`) VALUES
-(1, 'Iphone 12', '123', 'celular', 13500, 3, 'iphone.jpg', 'a7a8b65af751b37d22608d5ccb214552.jpg', 1, 0),
-(2, 'Samsung', '1234', 'Celular samsung', 15000, 1, 'samsung.jpg', 'e1947a45f82c8b42cd671e530bc54507.jpg', 1, 0),
-(3, 'xiomi', '12345', 'celular', 4567, 3, 'xiaomi.jpg', 'b7925ff42e233e032e256fe76bd1c3b6.jpg', 1, 0),
-(4, 'Tablet', '3477', 'tablet', 4595, 5, 'TB.webp', '01ed7727f53d5f05dc02d7604a3856d5.webp', 1, 0);
+(1, 'Iphone 12', '123', 'celular', 13500, 7, 'iphone.jpg', 'a7a8b65af751b37d22608d5ccb214552.jpg', 1, 0),
+(2, 'Samsung', '1234', 'Celular samsung', 15000, 4, 'samsung.jpg', 'e1947a45f82c8b42cd671e530bc54507.jpg', 1, 0),
+(3, 'xiomi', '12345', 'celular', 4567, 6, 'xiaomi.jpg', 'b7925ff42e233e032e256fe76bd1c3b6.jpg', 1, 0),
+(4, 'Tablet', '3477', 'tablet', 4595, 3, 'TB.webp', '01ed7727f53d5f05dc02d7604a3856d5.webp', 1, 0),
+(5, 'iPad 10', '9876', 'Ipad ultima generacion', 10000, 7, 'ipad.jpg', '6f2a15736fe0e76333f639798b28dd96.jpg', 1, 0),
+(6, 'Laptop Lenovo', '45673', 'Laptop lenovo de 16 gb de ram', 20000, 5, 'lenovo.jpg', '3da3e24ab6639ea0285b0351dfd175bf.jpg', 1, 0),
+(7, 'Laptop Dell', '34573', 'Laptop Dell modelo xxxx', 40544, 5, 'dell.jpeg', '7084599dcea2ac874a7ee87cf128de4d.jpeg', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -205,7 +231,7 @@ ALTER TABLE `promociones`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
@@ -217,19 +243,19 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos_productos`
 --
 ALTER TABLE `pedidos_productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `promociones`
