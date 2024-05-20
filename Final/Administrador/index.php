@@ -8,7 +8,7 @@
 ?>
 <html>
     <head>
-        <title>Login</title>
+        <title>AdminLogin</title>
         <link href="./css/style_formData.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
 
         <script src='../../jQuery/jquery-3.3.1.min.js'></script>
@@ -53,7 +53,7 @@
         <br><br><br>
         <!-- se manda las variables al archivo -->
         <form name="Forma01" id="Forma01" method="post">
-            <h1>Login</h1>
+            <h1>AdminLogin</h1>
 
             <label for="correo">Correo:</label>
             <input type="text" name="correo" id="correo" placeholder="Escribe tu correo ">

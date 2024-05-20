@@ -68,11 +68,10 @@
                 });
             }
             function validarTotal(){
-                var total = $('#resTotal').html();
-                if(total != '$0'){ //Si se vacio el carrito, total tiene que ser diferente a $0
-                    window.location.href="./carrito2.php";
-                }else{
+                if($('#resTotal').html() == '$0'){ //Si se vacio el carrito, total tiene que ser diferente a $0
+                    // window.location.href="./carrito1.php";
                     $('#continuar').html("Carrito vacio");
+                    $('#continuar').attr("href","#");
                 }
             }
         </script>
@@ -151,7 +150,7 @@
             echo '  <div id="divMensaje"><div id="mensaje"></div></div>
                     <script>$("#mensaje").hide();</script>
                     <div id="btnContinuar">
-                        <a id="continuar"  onclick="validarTotal();">Continuar carrito</a>
+                        <a id="continuar"  href="./carrito2.php" onclick="validarTotal();">Continuar carrito</a>
                     </div>';
 
             } else {

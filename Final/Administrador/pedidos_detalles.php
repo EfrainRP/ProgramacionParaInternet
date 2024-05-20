@@ -36,7 +36,7 @@
             #carrito #descripcion{ 
                 width: 25%;
                 max-width: 165px;
-                word-break: break-all;
+                word-break: break-word;
                 text-align: left;
             }
             #carrito th, #carrito td { 

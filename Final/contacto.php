@@ -6,6 +6,11 @@
     <head>
         <title>Contacto</title>
         <link href="./css/style_form.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
+        <style>
+            #carga img{
+                height: 2.5%;
+            }
+        </style>
         <script src='../jQuery/jquery-3.3.1.min.js'></script>
         <script>
         function validarCampos(){
@@ -18,28 +23,34 @@
                 $('#mensaje').html('Faltan campos por llenar');
                 setTimeout("$('#mensaje').html(''); $('#mensaje').hide();", 5000);
             } else {
-                document.Forma01.action = "./func/contacto_enviar.php";
-                document.Forma01.submit(); //Se ejecuta el envio de los datos al archivo empleados_salva.php
-                // $.ajax({
-                //     url         : './func/contacto_enviar.php',
-                //     type        : 'post',
-                //     dataType    : 'text',
-                //     data        : 'correo='+correo+'&nombre='+nombre+'&comentarios='+comentarios,
-                //     success     : function(res) {
-                //         console.log(res);
-                //         if (res == 'success'){
-                //             $('#mensaje').show();
-                //             $('#mensaje').html('Gracias por ponerte en contacto!');
-                //             setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
-                //         } else {
-                //             $('#mensaje').show();
-                //             $('#mensaje').html('Error al enviar la solicitud');
-                //             setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
-                //         }
-                //     },error: function() {
-                //         alert ('Error archivo no encontrado...');
-                //     }
-                // });
+                $('#carga').show();
+                setTimeout("$('#carga').hide();",2500);
+                $.ajax({
+                    url         : './func/contacto_enviar.php',
+                    type        : 'post',
+                    dataType    : 'text',
+                    data        : 'correo='+correo+'&nombre='+nombre+'&comentarios='+comentarios,
+                    success     : function(res) {
+                        console.log(res);
+                        if (res == 1){//Envio correcto de correo
+                            $('#nombre').val('');
+                            $('#correo').val('');
+                            $('#comentarios').val('');
+
+                            $('#mensaje').css("color","var(--bluePalette-color)");
+                            $('#mensaje').css("border-color","var(--bluePalette-color)");
+                            $('#mensaje').show();
+                            $('#mensaje').html('Gracias por ponerte en contacto!');
+                            setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
+                        } else {
+                            $('#mensaje').show();
+                            $('#mensaje').html('Error al enviar el correo');
+                            setTimeout("$('#mensaje').html('');$('#mensaje').hide();",5000);
+                        }
+                    },error: function() {
+                        alert ('Error archivo no encontrado...');
+                    }
+                });
             }  
         }
         </script>
@@ -58,8 +69,9 @@
             <label for="comentarios" >Comentarios:</label>
             <textarea name="comentarios" id="comentarios" cols="32" rows="10" placeholder="Escribe tu comentario "></textarea>
             
+            <div id="carga"><img src="./Administrador/archivos/loader.gif"></div>
             <div id="mensaje"></div>
-            <script>$('#mensaje').hide();$('#mensajeCorreo').hide()</script>
+            <script>$('#mensaje').hide();$('#carga').hide()</script>
 
             <input class="opciones" id="enviar" type="submit" onclick="validarCampos(); return false;" value="Enviar">
         </form>

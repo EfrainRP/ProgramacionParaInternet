@@ -49,7 +49,7 @@
                 while($row = $res->fetch_array()){ 
                     $id = $row['id'];
                     $id_cliente = $row['id_usuario'];
-                    $status = $row['status'];
+                    $status = $row['status']==1?'Cerrado':'Abierto';
                     $fecha = $row['fecha'];
 
                     // Datos obtenidos de la consulta

@@ -38,7 +38,7 @@ a{
     text-decoration: none; /*para quitar el subrayado del link (boton)*/
     text-align: center;
     height:auto;
-    word-break: break-all; /* Se rompe la palabra para ajustarlo al div*/
+    word-break: break-word; /* Se rompe la palabra para ajustarlo al div*/
 }
 .header #opciones{
     grid-column: span 3;

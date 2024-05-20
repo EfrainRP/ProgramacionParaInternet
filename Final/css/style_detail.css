@@ -28,7 +28,7 @@ a{
     grid-column: 1;
     grid-row: 1 / 8;
     border-radius: 1em; /* Redondea el ojeto */
-    max-width: 80%;
+    max-width: 65%;
     height: auto;
     box-shadow: 0 0 50px var(--bluePalette-color); /*Le da una sobra al objeto*/
 
@@ -122,6 +122,7 @@ a#comprar, #añadirCarrito,a#regresar{
     font-family: Arial;
     background-color: var(--greyPalette-color);
     min-width:min-content;
+    max-width: 98%;
     border-radius: 2em;/*Redondea el ojeto*/
     box-shadow: 0 0 10px #00000061; /*Le da una sobra al objeto*/
 }
@@ -131,7 +132,7 @@ a#comprar, #añadirCarrito,a#regresar{
     text-align: center;
 }
 [id^='producto'] #imagen{
-    max-width: 43%;
+    max-width: 38%;
     height: auto;
     margin-bottom: 2.5%;
     border-radius: 0.35em; /* Redondea el ojeto */
@@ -155,7 +156,7 @@ a#comprar:active, a#regresar:active, #añadirCarrito:active{
 #data #mensaje{
     padding: 1%;
     font-size: 0.85em;
-    width: 60%;
+    width: 80%;
     color:#ff0000;
     border: 3px dashed#e97979;
     margin: 2% auto auto 15%;

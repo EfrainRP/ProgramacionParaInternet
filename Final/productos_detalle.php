@@ -118,6 +118,7 @@
             echo '</div>';
             } 
         ?>
+        <script>actualizarCarrito();</script>
         <footer>
             <a href="./index.php">EfraTronic.com </a>| 
             Todos los derechos reservados | 

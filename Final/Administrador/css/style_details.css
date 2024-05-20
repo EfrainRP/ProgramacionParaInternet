@@ -45,7 +45,7 @@ body{
 }
 #contenedor .opciones#regresar{
     /* font-size: 1.1vw; */
-    color:#b0b0b0;
+    color:black;
     border: 3px outset black;
     background-color: #f85b78;
     padding:0.1em 0.5em;
