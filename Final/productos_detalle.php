@@ -22,6 +22,7 @@
                     success  : function(res) {
                         console.log('res: '+res);
                         if (res == 1) {
+                            actualizarCarrito();
                             $('#mensaje').show();
                             $('#mensaje').html('Se ha agregado correctamente');
                             $('#mensaje').css('color','var(--greyPalette-color)');
@@ -88,7 +89,7 @@
                         </div>
                         <div id='mensaje'></div>
                         <script>$('#mensaje').hide();</script>
-                        <a id='añadirCarrito' onclick='agregarProducto($id,$stock); actualizarCarrito();'><b>Añadir a carrito</b></a>
+                        <a id='añadirCarrito' onclick='agregarProducto($id,$stock);'><b>Añadir a carrito</b></a>
                         <a id='comprar' href='./carrito1.php'><b>Ir a carrito</b></a>";
                     }
                     echo "<a id='regresar' href='./$url_anterior'><b>Regresar</b></a></div>";
