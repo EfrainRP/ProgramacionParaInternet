@@ -29,8 +29,6 @@
                     $sql = "SELECT id FROM pedidos_productos WHERE id_pedido = ".$row["id"];
                     $res = $con->query($sql); //ejecuta una consulta en la conexion
                     echo '<a class="menu" id="carritoMenu" href="./carrito1.php">Carrito(<span>'.$res->num_rows.'</span>)</a>';
-                }else{
-                    echo '<a class="menu" id="carritoMenu" href="./carrito1.php">Carrito(<span>0</span>)</a>';
                 }
             }else{
                 echo '

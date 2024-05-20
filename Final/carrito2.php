@@ -13,13 +13,18 @@
             }
             #mensaje{
                 width: 30%;
-                color:var(--bluePalette-color);
-                border: 3px dashed var(--bluePalette-color);
+                color:black;
+                border: 3px dashed #26ee07;
                 text-align: center;
+                background-color: var(--whitePalette-color);
+            }
+            #carga{
+                max-width: 18%;
+                height: auto;
             }
         </style>
         <script src='../jQuery/jquery-3.3.1.min.js'></script>
-        <script src='./js/numCarrito.js'></script>
+        <script src='./js/backCarrito.js'></script>
     </head>
 
     <body>
@@ -85,7 +90,7 @@
             </table>';
             echo '<div id="btnContinuar">
                 <a id="regresar"  href="./carrito1.php" >Regresar</a>  
-                <div id="carga"><img src="./Administrador/archivos/loader.gif"></div>
+                <img id="carga" src="./Administrador/archivos/loader.gif">
                 <div id="mensaje"></div>
                 <script>$("#mensaje").hide();$("#carga").hide();</script>
                 <a id="continuar" onclick="cerrarPedido('.$id_pedido.')";">Finalizar</a>
@@ -118,7 +123,7 @@
                             $('#carga').html('<img src="./Administrador/archivos/loader.gif">');
                             $('#carga').show(); //Esconde los elementos con id seleccionado
                             
-                            setTimeout('$("#mensaje").html(""); $("#mensaje").hide();$("#carga").hide(); location.href = "./carrito1.php";', 3000);
+                            setTimeout('$("#mensaje").html(""); $("#mensaje").hide();$("#carga").hide(); location.href = "./graciasCompra.php";', 3000);
                             actualizarCarrito();
                         }else{
                             console.log('Error al comprar');

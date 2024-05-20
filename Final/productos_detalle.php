@@ -8,7 +8,7 @@
         <title>Detalle</title>
         <link href="./css/style_detail.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css">
         <script src='../jQuery/jquery-3.3.1.min.js'></script>
-        <script src='./js/numCarrito.js'></script>
+        <script src='./js/backCarrito.js'></script>
         <script>
             function agregarProducto(id_producto,stock) {
                 var cant = $('input#cantidadProducto').val();
@@ -25,8 +25,8 @@
                             actualizarCarrito();
                             $('#mensaje').show();
                             $('#mensaje').html('Se ha agregado correctamente');
-                            $('#mensaje').css('color','var(--greyPalette-color)');
-                            $('#mensaje').css('border-color','var(--greyPalette-color)');
+                            $('#mensaje').css('color','black');
+                            $('#mensaje').css('border-color','#26ee07');
                             setTimeout('$("#mensaje ").html(""); $("#mensaje").hide();', 5000);
                         } else {
                             $('#mensaje').show();
